@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab - youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+  
+    <title> Psv Voyage </title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+ 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+   </head>
+   
+<body>
+  <div class="container">
+    <div class="title">AIR RESERVATION</div>
+    <img src="./psv.png" alt="" style="width: 90px;" class="logo">
+    <div class="content">
+      <form action="#" name="form1"   data-aos="zoom-out">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name In Passport</span>
+            <input type="text" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Destination</span>
+            <input type="text" id="destination" placeholder="Enter your Destination" required>
+          </div>
+          <div class="input-box">
+            <label>Traveling Date</label>
+            <input type="date" id="date" placeholder="Traveling Date" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" placeholder="Enter your Email" required onkeydown="validate()">
+            <span id="email-error"></span>
+            <span id="email-suc"></span>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text"  id="number" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Airline Of Choice</span>
+            <input type="text" id="airline" placeholder="Enter your Airline of preference" autocomplete="on" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Return Date</span>
+            <input type="date" id="rdate" placeholder="Enter your return Date" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Origin</span>
+            <input type="text" id="origin" placeholder="Enter your Origin"  required>
+            
+          </div>
+        </div>
+        
+        <div class="button">
+          <input type="submit" onclick="whatsapp();"value="Reservation" ><br><br>
+          <a href="../../Service.html" style="text-decoration: none;" >Back</a>
+        </div>
+       
+      </form>
+    </div>
+  </div>
+  <script>
+     function validate(){
+    var emailError=document.getElementById("email-error");
+    var emailsuc=document.getElementById("email-suc");
+    var email=document.getElementById("email").value;
+    var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if(!email.match(pattern)){
+emailError.innerHTML="Enter valid Email";
+    }else{
+      emailError.innerHTML="";
+    }
+    }
+    
+  </script>
+<script>
+  
+  function whatsapp(){
+    var name=document.getElementById("name").value;
+    var destination=document.getElementById("destination").value;
+    var date=document.getElementById("date").value;
+    var email=document.getElementById("email").value;
+    var number=document.getElementById("number").value;
+    var airline=document.getElementById("airline").value;
+    var rdate=document.getElementById("rdate").value;
+    var origin=document.getElementById("origin").value;
+   
+    var url="https://wa.me/677875361?text="
+    +"Flight Reservation For "+destination+"%0a"
+    +"Name:"+name+"%0a"
+    +"Destination:"+destination+"%0a"
+    +"Date:"+date+"%0a"
+    +"Email:"+email+"%0a"
+    +"Number:"+number+"%0a"
+    +"Airline:"+airline+"%0a"
+    +"Return Date:"+rdate+"%0a"
+    +"Origin:"+origin+"%0a"
+   while(name!="" && origin!=""){
+         window.open(url,'_blank').focus();
+   }
+  
+  }
+  
+</script>
+</body>
+</html>

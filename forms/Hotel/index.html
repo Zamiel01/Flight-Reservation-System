@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab - youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+  
+    <title> Psv Voyage </title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+ 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+   </head>
+   
+<body>
+  <div class="container">
+    <div class="title">HOTEL BOOKING</div>
+    <img src="../../assets/img/psv.png" alt="" style="width: 90px;" class="logo">
+    <div class="content">
+      <form action="#" name="form1"   data-aos="zoom-out">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name In Passport</span>
+            <input type="text" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Town</span>
+            <input type="text" id="town" placeholder="Enter current town" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" placeholder="Enter your Email" required onkeyup="validate()">
+            <span id="email-error"></span>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text"  id="number" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Number of Days</span>
+            <input type="number"  id="days" placeholder="Enter number of days" required>
+          </div>
+        </div>
+        
+        <div class="button">
+          <input type="submit" onclick="whatsapp();"value="Booking" ><br><br>
+          
+          <a href="../../Service.html" style="text-decoration: none;" >Back</a>
+        </div>
+  
+      </form>
+    </div>
+  </div>
+  <script>
+    function validate(){
+   var emailError=document.getElementById("email-error");
+   var emailsuc=document.getElementById("email-suc");
+   var email=document.getElementById("email").value;
+   var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+   if(!email.match(pattern)){
+emailError.innerHTML="Enter valid Email";
+   }else{
+     emailError.innerHTML="";
+   }
+   }
+   
+ </script>
+<script>
+  function whatsapp(){
+    var name=document.getElementById("name").value;
+    var email=document.getElementById("email").value;
+    var number=document.getElementById("number").value;
+    var town=document.getElementById("town").value;
+    var days=document.getElementById("days").value;
+    var url="https://wa.me/677875361?text="
+    +"Hotel Booking"+"%0a"
+    +"Name:"+name+"%0a" 
+    +"Current Town:"+town+"%0a"
+    +"Email:"+email+"%0a"
+    +"phone Number:"+number+"%0a"
+    +"Number of days:"+days+"%0a"
+    
+
+   while(name!="" && days!=""){
+         window.open(url,'_blank').focus();
+   }
+  
+  }
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Designined by CodingLab - youtube.com/codinglabyt -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+  
+    <title>PSV VOYAGE </title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+ 
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+   </head>
+   
+<body>
+  <div class="container">
+    <div class="title">Touristic Packages</div>
+    <img src="../../assets/img/psv.png" alt="" style="width: 90px;" class="logo">
+    <div class="content">
+      <form action="#" name="form1"   data-aos="zoom-out">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name In Passport</span>
+            <input type="text" id="name" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <label>Date Required</label>
+            <input type="date" id="date" placeholder=" Date" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" placeholder="Enter your Email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text"  id="number" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Customer Budget</span>
+            <input type="currency"  id="budget" placeholder="Enter your Budget" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Number of Individuals</span>
+            <input type="number"  id="count" placeholder="Enter number of individual" required>
+          </div>
+        </div>
+        
+        <div class="button">
+          <input type="submit" onclick="whatsapp();"value="RELAX" ><br><br>
+          <a href="../../Service.html" style="text-decoration: none;" >Back</a>
+        </div>
+       
+      </form>
+    </div>
+  </div>
+<script>
+  function whatsapp(){
+    var name=document.getElementById("name").value;
+    var date=document.getElementById("date").value;
+    var email=document.getElementById("email").value;
+    var number=document.getElementById("number").value;
+    var count=document.getElementById("count").value;
+    var budget=document.getElementById("budget").value;
+    var url="https://wa.me/677875361?text="
+
+    +"Name:"+name+"%0a"
+    +"Date:"+date+"%0a"
+    +"Email:"+email+"%0a"
+    +"Number:"+number+"%0a"
+    +"Customer Budget:"+budget+"%0a"
+    +"Number of Individuals:"+count+" persons"+"%0a"
+   while(name!="" && number!=""){
+         window.open(url,'_blank').focus();
+   }
+  
+  }
+  
+</script>
+</body>
+</html>

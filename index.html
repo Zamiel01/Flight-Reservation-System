@@ -19,9 +19,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
@@ -38,138 +40,305 @@
   ======================================================== -->
 </head>
 
+
 <body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1>Psv Voyage<span>.</span></h1>
-      </a>
+    <span class="log"><a href="index.html" class="logo d-flex align-items-center">
+      <h1>Psv Voyage<span>.</span></h1>
+      </a></span>
+     
 
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html" >Zamiel Morningstar </a></li>
-          <li><a href="about.html">Boysoft</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="service.html">Services</a></li>
-          <li><a href="blog.html">Support</a></li>
-          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
+
     </div>
   </header><!-- End Header -->
 
-  <main id="main">
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/Hot.jpg');">
-      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+    <div class="info d-flex align-items-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2 data-aos="fade-down">WELCOME TO PSV VOYAGE</h2>
+            <p data-aos="fade-up">We offer you one of the best and cheap air tickets plans and provide you comfort with suitable hotel's at affordable prices</p>
+            <a data-aos="fade-up" data-aos-delay="200" href="#about" class="btn-get-started">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        <h2>Contact</h2>
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Contact</li>
-        </ol>
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <div class="carousel-item active" style="background-image: url(assets/img/hero-carousel/R\ \(1\).jpg)"></div>
+      <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/R\ \(2\).jpg)"></div>
+      <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/R\ \(5\).jfif)"></div>
+      <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/R\ \(4\).jpg)"></div>
+      <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/dad.jpg)"></div>
+
+      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+
+  </section><!-- End Hero Section -->
+  <!-- ======= Advertizement Section ======= -->
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row position-relative">
+
+        <div class="col-lg-7 about-img" style="background-image: url(assets/img/atten.jpg);"></div>
+
+        <div class="col-lg-7">
+          <h2>Air Reservation</h2>
+          <div class="our-story">
+           
+            <p>At psv voyage we are in partnership with quite a few airline well known by everyone and we makes sure our clients get to thier destination and all this at affordable prices.</p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> <span>Ethopia Airline</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Turkish Airline</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>AirFrance</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Air Ivoir</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Senegal Airlines</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Kenya Airline</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>Camairco</span></li>
+            </ul>
+            <p>Our objective is to make our customers happy, and make sure they are satisfied at 100% for which they have payed and asked for.</p>
+
+            <div class="watch-video d-flex align-items-center position-relative">
+              <img src="./assets/img/Airfrance.jfif" alt="" style="width: 50px;">
+              <img src="./assets/img/iv.jfif" alt="" style="width: 50px;">
+              <img src="./assets/img/sen.jfif" alt="" style="width: 50px;">
+              <img src="./assets/img/ken.jfif" alt="" style="width: 50px;">
+            </div>
+          </div>
+        </div>
 
       </div>
-    </div><!-- End Breadcrumbs -->
 
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
+    </div>
+  </section>
+  <!-- End Advertizement Section -->
+   <!-- ======= Stats Counter Section ======= -->
+   <section id="stats-counter" class="stats-counter section-bg">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item d-flex align-items-center w-100 h-100">
+            <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+            <div>
+              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Happy Clients</p>
+            </div>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item d-flex align-items-center w-100 h-100">
+            <i class="bi bi-headset color-green flex-shrink-0"></i>
+            <div>
+              <span data-purecounter-start="0" data-purecounter-end="288" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hours Of Support</p>
+            </div>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item d-flex align-items-center w-100 h-100">
+            <i class="bi bi-people color-pink flex-shrink-0"></i>
+            <div>
+              <span data-purecounter-start="0" data-purecounter-end="13" data-purecounter-duration="1" class="purecounter"></span>
+              <p>Hard Workers</p>
+            </div>
+          </div>
+        </div><!-- End Stats Item -->
+
+      </div>
+
+    </div>
+  </section><!-- End Stats Counter Section -->
+   <!-- ======= Alt Services Section ======= -->
+   <section id="alt-services" class="alt-services">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row justify-content-around gy-4">
+        <div class="col-lg-6 img-bg" style="background-image: url(assets/img/Hotel.jpg);" data-aos="zoom-in" data-aos-delay="100"></div>
+
+        <div class="col-lg-5 d-flex flex-column justify-content-center">
+          <h3>Hotel Booking And Reservation</h3>
+          <p>We also take care of our customers comfort by providing them with with the best hotels and all this at cheaper prices. </p>
+
+          <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
+            <i class="bi bi-easel flex-shrink-0"></i>
+            <div>
+              <h4><a href="" class="stretched-link">Entertainment</a></h4>
+              <p>TV to pass time with family and etertain children and if single pass time with friends.</p>
+            </div>
+          </div><!-- End Icon Box -->
+
+          <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-patch-check flex-shrink-0"></i>
+            <div>
+              <h4><a href="" class="stretched-link">Hotel Services</a></h4>
+              <p>Always available for the cutomers needs and make sure they are safe and secure during thier stay.</p>
+            </div>
+          </div><!-- End Icon Box -->
+
+          <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-brightness-high flex-shrink-0"></i>
+            <div>
+              <h4><a href="" class="stretched-link">Availability</a></h4>
+              <p>Always available even during bad weather conditions we always answer present to our customers.</p>
+            </div>
+          </div><!-- End Icon Box -->
+
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Alt Services Section -->
+   <!-- ======= Projet Details Section ======= -->
+    <!-- ======= Projet Details Section ======= -->
+    <section id="project-details" class="project-details">
+      <div class="container" data-aos="fade-up" >
+<div class="section-header">
+  <h2>TOURISTIC PACKAGES</h2>
+<p>Wanna relax with family? or friends? here at psv voyage we offer you touristic packages
+and short trips all at affordable prices.
+</p>
+</div>
+        <div class="position-relative h-100">
+          <div class="slides-1 portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+
+              <div class="swiper-slide">
+                <img src="assets/img/projects/design-1.jpg" alt="">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/img/projects/t-2.jpg" alt="">
+              </div>
+
+              <div class="swiper-slide">
+                <img src="assets/img/projects/t-1.jpg" alt="">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+        </div>
+         <!-- ======= Service Details Section ======= -->
+    <section id="service-details" class="service-details">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row gy-4">
-          <div class="col-lg-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-map"></i>
-              <h3>Our Address</h3>
-              <p> Akwa 742 Bd de la liberte, Douala</p>
+
+          <div class="col-lg-4">
+           
             </div>
-          </div><!-- End Info Item -->
+</div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-envelope"></i>
-              <h3>Email Us</h3>
-              <p>nkuinmbeng@mail.com</p>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-telephone"></i>
-              <h3>Call Us</h3>
-              <p>+237 677875361</p>
-            </div>
-          </div><!-- End Info Item -->
-
-        </div>
-
-        <div class="row gy-4 mt-1">
-
-          <div class="col-lg-6 ">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7959.728188848285!2d9.694243391207083!3d4.048136533702365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x106112f675fac7b1%3A0x2016fb5df3d86b!2sPSV-Voyages!5e0!3m2!1sen!2scm!4v1691670390670!5m2!1sen!2scm" width="578" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div><!-- End Google Maps -->
-
-          <div class="col-lg-6">
-            <form action="https://formsubmit.co/nkuinmbeng@email.com" method="post" role="form" class="php-email-form">
-              <div class="row gy-4">
-                <div class="col-lg-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-lg-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div><!-- End Contact Form -->
+          
 
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section><!-- End Service Details Section -->
+<!-- ======= Footer ======= -->
+<footer id="footer">
 
-  </main><!-- End #main -->
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
 
-  
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h3>PSV VOYAGE</h3>
+          <p>
+            AKWA <br>
+            Douala, AKWA<br>
+            Cameroon <br><br>
+            <strong>Phone:</strong>678677213<br>
+            <strong>Email:</strong>nkuinmbeng@gmail.com<br>
+          </p>
         </div>
+
+        
+
+        <div class="col-lg-3 col-md-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><i class="bx bx-chevron-right"></i> <a href="./forms/Air/index.html">Air Reservation</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="./forms/Hotel/index.html">Hotel Booking</a></li>
+           
+            <li><i class="bx bx-chevron-right"></i> <a href="./forms/Tourist/index.html">Touristic Packages</a></li>
+           
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6 footer-newsletter">
+      <h4>Join Our Client's Community</h4></a>
+          <p>Be one of permenent clients and join or group and see latest flights at cheap prices</p>
+          <form action="https://chat.whatsapp.com/Bn6myYJ2ijM76p38basp0O" method="">
+          <input type="email" name="email">
+        <a href="https://chat.whatsapp.com/Bn6myYJ2ijM76p38basp0O"> <input type="submit" value="Join Now"></a>
+         
+          </form></a>   
+        </div>
+
       </div>
     </div>
+  </div>
 
-    <div class="footer-legal text-center position-relative">
-      <div class="container">
-        <div class="copyright">
-          &copy; Copyright <strong><span>ZamielMorningstar</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
-          Designed by <a href="#">ZamielMorningstar</a>
-        </div>
+  <div class="container d-md-flex py-4">
+
+    <div class="me-md-auto text-center text-md-start">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Zamiel</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/ -->
+        Designed by <a href="https://bootstrapmade.com/">ZamielMorningstar</a>
       </div>
     </div>
+    <div class="social-links text-center text-md-right pt-3 pt-md-0">
+      <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+      <a href="https://www.facebook.com/PSVvoyage1" class="facebook"><i class="bx bxl-facebook"></i></a>
+      <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+      <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+      <a href="https://cm.linkedin.com/company/psvvoyages#main-content" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+    </div>
+  </div>
+</footer><!-- End Footer -->
+   
+  <main id="main">
 
-  </footer>
-  <!-- End Footer -->
+ 
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -186,6 +355,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  
 
 </body>
 

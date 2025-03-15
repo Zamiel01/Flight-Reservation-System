@@ -16,7 +16,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@300;400;600&family=Work+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,34 +37,20 @@
 
     .breadcrumbs {
       background-image: url('assets/img/service.jpg');
-      background-size: cover;
-      background-position: center;
-      padding: 60px 0;
-      text-align: center;
-    }
-
-    .section-header h2 {
-      color: white;
-      margin: 0;
-    }
-
-    .service .card {
-      margin: 20px;
-    }
-
-    @media (max-width: 768px) {
-      .service .card-wrapper {
-        flex-direction: column;
-      }
+      background-size: cover; /* Ensures the image covers the entire area */
+      background-position: center; /* Centers the image */
+      background-attachment: fixed; /* Keeps the background fixed */
     }
   </style>
+
 </head>
 
 <body>
 
-  <!-- Header -->
+  <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
       <a href="index.html" class="logo d-flex align-items-center">
         <h1>PSV VOYAGE<span style="color: red;">.</span></h1>
       </a>
@@ -78,72 +64,69 @@
           <li><a href="service.html" class="active">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-      </nav>
-    </div>
-  </header>
+      </nav><!-- .navbar -->
 
-  <!-- Breadcrumbs -->
+    </div>
+  </header><!-- End Header -->
+  
   <div class="breadcrumbs d-flex align-items-center">
     <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
       <div class="section-header">
-        <h2>Services</h2>
+        <span class="se"><h2> Services</h2></span> 
       </div>
     </div>
   </div>
 
-  <!-- Services Section -->
   <section id="service" class="service">
-    <div class="container">
-      <div class="slide-container swiper" data-aos="zoom-in">
-        <div class="slide-content">
-          <div class="card-wrapper swiper-wrapper">
-            <div class="card swiper-slide">
-              <div class="image-content">
-                <span class="overlay"></span>
-                <div class="card-image">
-                  <img src="assets/img/profile1.jfif" alt="" class="card-img">
-                </div>
-              </div>
-              <div class="card-content">
-                <h2 class="name">AIR RESERVATION</h2>
-                <p class="description">Do your reservations right here and now.</p>
-                <a href="https://www.youtube.com/watch?v=w72h__2T2TM" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                <a href="./forms/Air/index.html"><button class="button">RESERVATION</button></a>
+    <div class="slide-container swiper" data-aos="zoom-in">
+      <div class="slide-content">
+        <div class="card-wrapper swiper-wrapper">
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="assets/img/profile1.jfif" alt="" class="card-img">
               </div>
             </div>
-            <div class="card swiper-slide">
-              <div class="image-content">
-                <span class="overlay"></span>
-                <div class="card-image">
-                  <img src="assets/img/profile2.jpg" alt="" class="card-img">
-                </div>
-              </div>
-              <div class="card-content">
-                <h2 class="name">HOTEL BOOKING</h2>
-                <p class="description">Book the hotel of your choice.</p>
-                <a href="https://www.youtube.com/watch?v=ZpyQ3dR9dgY" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                <a href="./forms/Hotel/index.html"><button class="button">BOOK NOW</button></a>
-              </div>
-            </div>
-            <div class="card swiper-slide">
-              <div class="image-content">
-                <span class="overlay"></span>
-                <div class="card-image">
-                  <img src="assets/img/profile4.jpg" alt="" class="card-img">
-                </div>
-              </div>
-              <div class="card-content">
-                <h2 class="name">TOURISTIC PACKAGES</h2>
-                <p class="description">Check out our touristic packages.</p>
-                <a href="https://www.youtube.com/watch?v=cu5BZNymMzs" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-                <a href="./forms/Tourist/index.html"><button class="button">RELAX NOW</button></a>
-              </div>
+            <div class="card-content">
+              <h2 class="name">AIR RESERVATION</h2>
+              <p class="description">Do you reservations right here and now.</p>
+              <a href="https://www.youtube.com/watch?v=w72h__2T2TM" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+              <a href="./forms/Air/index.html"><button class="button">RESERVATION</button></a>
             </div>
           </div>
-          <div class="swiper-button-next swiper-navBtn"></div>
-          <div class="swiper-button-prev swiper-navBtn"></div>
-          <div class="swiper-pagination"></div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="assets/img/profile2.jpg" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">HOTEL BOOKING</h2>
+              <p class="description">Book the hotel of your choice and where your are situated.</p>
+              <a href="https://www.youtube.com/watch?v=ZpyQ3dR9dgY" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+              <a href="./forms/Hotel/index.html"><button class="button">BOOK NOW</button></a>
+            </div>
+          </div>
+          <div class="card swiper-slide">
+            <div class="image-content">
+              <span class="overlay"></span>
+              <div class="card-image">
+                <img src="assets/img/profile4.jpg" alt="" class="card-img">
+              </div>
+            </div>
+            <div class="card-content">
+              <h2 class="name">TURISTIC PACKAGES</h2>
+              <p class="description">Check out our touristic packages relax with your family and friends all this with a small budget.</p>
+              <a href="https://www.youtube.com/watch?v=cu5BZNymMzs" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+              <a href="./forms/Tourist/index.html"><button class="button">RELAX NOW</button></a>
+            </div>
+          </div>
         </div>
+        <div class="swiper-button-next swiper-navBtn"></div>
+        <div class="swiper-button-prev swiper-navBtn"></div>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </section>
@@ -152,9 +135,16 @@
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
   <div id="preloader"></div>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
 
 </body>
 

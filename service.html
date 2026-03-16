@@ -4,202 +4,1001 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>MT TRAVELS AND TOURS</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <title>MT Travels and Tours — Services</title>
+  <meta content="Air ticket reservation, hotel booking, touristic packages and training in Douala, Cameroon." name="description">
 
- <!-- Favicons -->
- <link href="assets/img/psv.png" rel="icon">
- <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Favicons -->
+  <link href="assets/img/psv.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"></noscript>
 
-  <!-- Vendor CSS Files -->
+  <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Main CSS File -->
-  <link href="./assets/css/offer.css" rel="stylesheet">
+  <!-- Base CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Dewi
-  * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- ✦ PERFORMANCE: preload hero attendant image ✦ -->
+  <link rel="preload" as="image" href="assets/img/attent.jpg" fetchpriority="high">
+  <style>
+    .services-hero { background-color: #0d1b2a; }
+    .svc-card .card-img { background-color: #162336; }
+  </style>
+
+  <!-- ✦ SERVICE PAGE STYLES ✦ -->
+  <style>
+    /* ─── Tokens ─────────────────────────────────────── */
+    :root {
+      --navy:        #0d1b2a;
+      --navy-mid:    #162336;
+      --navy-light:  #1e3050;
+      --gold:        #c9a84c;
+      --gold-light:  #e8c97a;
+      --gold-pale:   #f5e9c8;
+      --cream:       #faf7f0;
+      --white:       #ffffff;
+      --text-dark:   #0d1b2a;
+      --text-mid:    #3a4a5c;
+      --text-muted:  #7a8b9c;
+      --font-display:'Playfair Display', Georgia, serif;
+      --font-italic: 'Cormorant Garamond', serif;
+      --font-body:   'DM Sans', sans-serif;
+      --radius:       4px;
+      --t:            0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: var(--font-body); background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+
+    /* ─── UTILITIES ──────────────────────────────────── */
+    #preloader:before { border-color: var(--gold) transparent var(--gold) transparent; }
+    .scroll-top { background: var(--gold) !important; }
+    .scroll-top i { color: var(--navy) !important; }
+
+    /* ─── HEADER ─────────────────────────────────────── */
+    .header {
+      background: rgba(13,27,42,0.0);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 20px 0;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 997;
+      transition: background var(--t), padding var(--t);
+    }
+    .header.scrolled {
+      background: rgba(13,27,42,0.97);
+      padding: 14px 0;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+    }
+    .header .logo h1 {
+      font-family: var(--font-display);
+      font-size: 22px; font-weight: 700;
+      color: #fff; margin: 0; letter-spacing: 0.02em;
+    }
+    .header .logo h1 span { color: var(--gold); }
+    @media (min-width: 1280px) {
+      .navbar a, .navbar a:focus {
+        font-family: var(--font-body);
+        font-size: 11px; letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.7); font-weight: 500;
+      }
+      .navbar a:hover, .navbar .active { color: var(--gold) !important; }
+      .navbar>ul>li>a:before { background: var(--gold); }
+    }
+
+    /* ─── HERO ───────────────────────────────────────── */
+    .services-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .services-hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 25% 50%, rgba(30,48,80,0.9) 0%, transparent 70%);
+      z-index: 2;
+    }
+    /* Diagonal line pattern on far left */
+    .services-hero::after {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0; width: 120px;
+      background: repeating-linear-gradient(
+        -55deg, transparent, transparent 18px,
+        rgba(201,168,76,0.04) 18px, rgba(201,168,76,0.04) 19px
+      );
+      z-index: 3; pointer-events: none;
+    }
+
+    /* ── Right image panel ── */
+    .hero-img-panel {
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 46%;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .hero-img-panel img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: brightness(0.75) saturate(0.85);
+    }
+    .hero-img-panel::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--navy) 0%, rgba(13,27,42,0.85) 20%, transparent 60%);
+      z-index: 1;
+    }
+    .hero-img-panel::after {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to top, rgba(13,27,42,0.7) 0%, transparent 40%),
+        linear-gradient(to left, rgba(201,168,76,0.08) 0%, transparent 50%);
+      z-index: 1;
+    }
+    @media (max-width: 1200px) { .hero-img-panel { width: 48%; } }
+    @media (max-width: 992px)  {
+      .hero-img-panel { width: 100%; opacity: 0.2; }
+      .hero-img-panel::before {
+        background: linear-gradient(to bottom, rgba(13,27,42,0.5) 0%, rgba(13,27,42,0.85) 100%);
+      }
+    }
+
+    /* Gold frame corners */
+    .hero-img-frame {
+      position: absolute;
+      bottom: 48px; right: 40px;
+      width: 72px; height: 72px;
+      border-bottom: 2px solid rgba(201,168,76,0.5);
+      border-right: 2px solid rgba(201,168,76,0.5);
+      z-index: 2; pointer-events: none;
+    }
+    .hero-img-frame-tl {
+      position: absolute;
+      top: 80px; right: 40px;
+      width: 72px; height: 72px;
+      border-top: 2px solid rgba(201,168,76,0.5);
+      border-right: 2px solid rgba(201,168,76,0.5);
+      z-index: 2; pointer-events: none;
+    }
+    /* Floating stat badge */
+    .hero-img-tag {
+      position: absolute;
+      bottom: 56px; left: 0px;
+      background: var(--gold);
+      padding: 14px 24px;
+      z-index: 3;
+      border-radius: var(--radius);
+      box-shadow: 0 12px 40px rgba(201,168,76,0.4);
+    }
+    .hero-img-tag strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 26px; font-weight: 700;
+      color: var(--navy); line-height: 1;
+    }
+    .hero-img-tag span {
+      font-family: var(--font-body);
+      font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase; color: rgba(13,27,42,0.6);
+    }
+
+    .hero-gold-line {
+      position: absolute;
+      bottom: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold), rgba(201,168,76,0.2) 60%, transparent);
+      z-index: 10;
+    }
+    .hero-inner {
+      position: relative; z-index: 4;
+      padding: 160px 0 100px;
+      width: 42%;
+      max-width: 520px;
+      margin-left: 0;
+      padding-left: 60px;
+    }
+    @media (max-width: 1400px) { .hero-inner { width: 44%; padding-left: 48px; } }
+    @media (max-width: 1200px) { .hero-inner { width: 46%; padding-left: 40px; } }
+    @media (max-width: 992px)  { .hero-inner { width: 100%; max-width: 100%; padding: 140px 24px 80px; } }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center; gap: 12px;
+      font-family: var(--font-body);
+      font-size: 11px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .hero-eyebrow::before {
+      content: ''; width: 36px; height: 1px;
+      background: var(--gold); flex-shrink: 0;
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(56px, 7vw, 96px);
+      font-weight: 900; color: var(--white);
+      line-height: 1.0; letter-spacing: -0.03em;
+      margin: 0 0 8px;
+    }
+    .hero-title em {
+      font-style: italic; font-weight: 400;
+      color: var(--gold-light);
+    }
+    .hero-sub {
+      font-family: var(--font-italic);
+      font-size: clamp(16px, 2vw, 20px);
+      font-style: italic;
+      color: rgba(255,255,255,0.6);
+      margin: 20px 0 0; max-width: 440px; line-height: 1.7;
+    }
+    .hero-breadcrumb {
+      display: flex; align-items: center; gap: 10px;
+      margin-top: 36px;
+      font-family: var(--font-body);
+      font-size: 12px; letter-spacing: 0.06em;
+      color: rgba(255,255,255,0.4);
+    }
+    .hero-breadcrumb a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color var(--t); }
+    .hero-breadcrumb a:hover { color: var(--gold); }
+    .hero-breadcrumb .sep { font-size: 8px; color: var(--gold); }
+
+    /* ─── SECTION INTRO ──────────────────────────────── */
+    .services-intro {
+      padding: 80px 0 48px;
+      text-align: center;
+    }
+    .intro-label {
+      font-family: var(--font-body);
+      font-size: 11px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      display: block; margin-bottom: 12px;
+    }
+    .intro-heading {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 700; color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .intro-sub {
+      font-family: var(--font-italic);
+      font-style: italic; font-size: 18px;
+      color: var(--text-muted); max-width: 540px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .intro-rule {
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 24px auto 0;
+    }
+
+    /* ─── SERVICE CARDS ──────────────────────────────── */
+    .services-grid {
+      padding: 0 0 100px;
+    }
+
+    .svc-card {
+      background: var(--white);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 24px rgba(13,27,42,0.05);
+      transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+    }
+    .svc-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 32px 72px rgba(13,27,42,0.13);
+      border-color: var(--gold);
+    }
+
+    /* Image area */
+    .svc-card .card-img {
+      position: relative;
+      height: 240px;
+      overflow: hidden;
+      background: var(--navy);
+    }
+    .svc-card .card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s var(--t), filter 0.5s;
+      filter: grayscale(15%) brightness(0.9);
+    }
+    .svc-card:hover .card-img img {
+      transform: scale(1.07);
+      filter: grayscale(0%) brightness(1);
+    }
+    /* Dark gradient over image */
+    .svc-card .card-img::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,27,42,0.65) 0%, transparent 55%);
+      transition: opacity var(--t);
+    }
+    /* Number badge */
+    .card-number {
+      position: absolute;
+      top: 16px; right: 18px;
+      font-family: var(--font-display);
+      font-size: 48px; font-weight: 900;
+      color: rgba(255,255,255,0.12);
+      line-height: 1;
+      z-index: 2;
+      letter-spacing: -0.05em;
+    }
+    /* Icon pill on image */
+    .card-icon-pill {
+      position: absolute;
+      bottom: 18px; left: 18px;
+      z-index: 2;
+      width: 48px; height: 48px;
+      background: var(--gold);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; color: var(--navy);
+      box-shadow: 0 6px 20px rgba(201,168,76,0.4);
+      transition: transform var(--t), background var(--t);
+    }
+    .svc-card:hover .card-icon-pill {
+      transform: scale(1.1) rotate(-5deg);
+      background: var(--gold-light);
+    }
+
+    /* Card body */
+    .svc-card .card-body {
+      padding: 28px 30px 32px;
+      flex: 1;
+      display: flex; flex-direction: column;
+    }
+    /* Gold top accent line */
+    .svc-card .card-body::before {
+      content: '';
+      display: block;
+      width: 36px; height: 2px;
+      background: var(--gold);
+      margin-bottom: 16px;
+      transition: width var(--t);
+    }
+    .svc-card:hover .card-body::before { width: 60px; }
+
+    .svc-card h3 {
+      font-family: var(--font-display);
+      font-size: 20px; font-weight: 700;
+      color: var(--navy); letter-spacing: -0.01em;
+      margin-bottom: 10px; line-height: 1.25;
+    }
+    .svc-card p {
+      font-family: var(--font-body);
+      font-size: 14px; line-height: 1.7;
+      color: var(--text-muted); margin-bottom: 0;
+      flex: 1;
+    }
+
+    /* CTA link */
+    .card-cta {
+      display: inline-flex;
+      align-items: center; gap: 8px;
+      margin-top: 24px;
+      font-family: var(--font-body);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--navy);
+      text-decoration: none;
+      padding: 11px 22px;
+      background: var(--cream);
+      border: 1px solid rgba(13,27,42,0.1);
+      border-radius: var(--radius);
+      transition: background var(--t), border-color var(--t), color var(--t), transform var(--t);
+      align-self: flex-start;
+    }
+    .card-cta i { font-size: 14px; transition: transform var(--t); }
+    .svc-card:hover .card-cta {
+      background: var(--navy);
+      border-color: var(--navy);
+      color: var(--gold);
+    }
+    .svc-card:hover .card-cta i { transform: translateX(4px); }
+
+    /* ─── HIGHLIGHT BAND ─────────────────────────────── */
+    .highlight-band {
+      background: var(--navy);
+      padding: 64px 0;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .highlight-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        90deg,
+        transparent, transparent 80px,
+        rgba(201,168,76,0.02) 80px, rgba(201,168,76,0.02) 81px
+      );
+    }
+    .highlight-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 0;
+      position: relative; z-index: 1;
+    }
+    @media (max-width: 768px) {
+      .highlight-inner { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .highlight-inner { grid-template-columns: 1fr; }
+    }
+    .hl-item {
+      text-align: center;
+      padding: 20px 24px;
+      position: relative;
+    }
+    .hl-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 15%; bottom: 15%;
+      width: 1px;
+      background: rgba(201,168,76,0.15);
+    }
+    @media (max-width: 768px) {
+      .hl-item:nth-child(2n)::after { display: none; }
+      .hl-item { border-bottom: 1px solid rgba(201,168,76,0.08); }
+      .hl-item:last-child, .hl-item:nth-last-child(2) { border-bottom: none; }
+    }
+    .hl-icon {
+      width: 48px; height: 48px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: var(--gold);
+      margin: 0 auto 14px;
+      transition: background var(--t);
+    }
+    .hl-item:hover .hl-icon { background: rgba(201,168,76,0.2); }
+    .hl-title {
+      font-family: var(--font-display);
+      font-size: 15px; font-weight: 700;
+      color: var(--white); margin-bottom: 6px;
+    }
+    .hl-desc {
+      font-family: var(--font-body);
+      font-size: 12px; line-height: 1.6;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ─── CTA BANNER ─────────────────────────────────── */
+    .cta-banner {
+      padding: 96px 0;
+      background: var(--cream);
+      text-align: center;
+    }
+    .cta-banner .eyebrow {
+      font-family: var(--font-body);
+      font-size: 11px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      display: block; margin-bottom: 16px;
+    }
+    .cta-banner h2 {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 4vw, 48px);
+      font-weight: 700; color: var(--navy);
+      letter-spacing: -0.02em; margin-bottom: 16px;
+    }
+    .cta-banner h2 em { font-style: italic; color: var(--gold); font-weight: 400; }
+    .cta-banner p {
+      font-family: var(--font-italic);
+      font-style: italic; font-size: 18px;
+      color: var(--text-muted); max-width: 440px;
+      margin: 0 auto 36px; line-height: 1.7;
+    }
+    .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-cta-primary {
+      font-family: var(--font-body);
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 16px 44px;
+      background: var(--navy); color: var(--gold);
+      border: 2px solid var(--navy);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background var(--t), color var(--t), transform var(--t), box-shadow var(--t);
+      display: inline-block;
+    }
+    .btn-cta-primary:hover {
+      background: var(--gold); color: var(--navy);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(201,168,76,0.3);
+    }
+    .btn-cta-ghost {
+      font-family: var(--font-body);
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 15px 40px;
+      background: transparent; color: var(--navy);
+      border: 1px solid rgba(13,27,42,0.25);
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: border-color var(--t), color var(--t);
+      display: inline-block;
+    }
+    .btn-cta-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    #footer {
+      background: var(--navy-mid);
+      color: rgba(255,255,255,0.65);
+      box-shadow: none;
+    }
+    #footer .footer-top {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      padding: 60px 0 40px;
+    }
+    #footer .footer-top .footer-contact h3 {
+      font-family: var(--font-display);
+      color: var(--white); font-size: 20px; font-weight: 700;
+    }
+    #footer .footer-top .footer-contact p { color: rgba(255,255,255,0.5); }
+    #footer .footer-top h4 {
+      font-family: var(--font-display);
+      color: var(--white); font-size: 15px; font-weight: 600;
+    }
+    #footer .footer-top .footer-links ul {
+      list-style: none; padding: 0; margin: 0;
+    }
+    #footer .footer-top .footer-links ul li {
+      padding: 8px 0; display: flex; align-items: center;
+    }
+    #footer .footer-top .footer-links ul i { color: var(--gold); margin-right: 8px; }
+    #footer .footer-top .footer-links ul a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color var(--t); }
+    #footer .footer-top .footer-links ul a:hover { color: var(--gold); }
+    #footer .footer-newsletter p { color: rgba(255,255,255,0.5); font-size: 14px; }
+    #footer .footer-newsletter form {
+      margin-top: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.22);
+      border-radius: 50px;
+      padding: 6px 10px;
+      display: flex;
+    }
+    #footer .footer-newsletter form input[type=email] {
+      background: transparent; border: 0;
+      color: #fff; flex: 1; padding: 4px 8px;
+    }
+    #footer .footer-newsletter form input[type=email]::placeholder { color: rgba(255,255,255,0.28); }
+    #footer .footer-newsletter form input[type=submit] {
+      background: var(--gold); color: var(--navy); font-weight: 600;
+      border: 0; border-radius: 50px; padding: 0 20px;
+      font-size: 14px; cursor: pointer; transition: background var(--t);
+    }
+    #footer .footer-newsletter form input[type=submit]:hover { background: var(--gold-light); }
+    #footer .social-links a {
+      font-size: 18px; display: inline-block;
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.12);
+      color: rgba(255,255,255,0.55);
+      line-height: 1; margin-right: 6px;
+      border-radius: var(--radius);
+      width: 36px; height: 36px;
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: background var(--t), color var(--t);
+    }
+    #footer .social-links a:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    .py-4 { background: rgba(0,0,0,0.22); border-top: 1px solid rgba(201,168,76,0.07); }
+    #footer .copyright, #footer .credits { color: rgba(255,255,255,0.32); font-size: 13px; }
+    #footer .credits a { color: var(--gold); }
+
+    /* ─── Animations ─────────────────────────────────── */
+    @keyframes heroUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow  { animation: heroUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.2s both; }
+    .hero-title    { animation: heroUp 1.0s cubic-bezier(0.22,1,0.36,1) 0.35s both; }
+    .hero-sub      { animation: heroUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.5s both; }
+    .hero-breadcrumb { animation: heroUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.62s both; }
+
+    /* ─── FULL RESPONSIVE ────────────────────────────── */
+    /* Tablet: ≤ 991px */
+    @media (max-width: 991px) {
+      .services-hero { min-height: 80vh; }
+      .hero-title { font-size: clamp(44px, 10vw, 72px); }
+      .hero-inner { padding: 130px 0 80px; }
+      .hero-img-frame, .hero-img-frame-tl, .hero-img-tag { display: none; }
+      .highlight-inner { grid-template-columns: 1fr 1fr; gap: 0; }
+      .hl-item:nth-child(2n)::after { display: none; }
+      .hl-item { padding: 24px 20px; }
+      .services-intro { padding: 60px 0 36px; }
+      .services-grid { padding: 0 0 72px; }
+      .svc-card .card-img { height: 210px; }
+      .cta-banner { padding: 72px 0; }
+    }
+
+    /* Mobile: ≤ 767px */
+    @media (max-width: 767px) {
+      .services-hero { min-height: 70vh; }
+      .hero-eyebrow { font-size: 10px; }
+      .hero-title { font-size: clamp(40px, 12vw, 60px); }
+      .hero-sub { font-size: 15px; max-width: 100%; }
+      .hero-inner { padding: 110px 0 72px; }
+      .highlight-inner { grid-template-columns: 1fr; }
+      .hl-item { border-bottom: 1px solid rgba(201,168,76,0.08) !important; }
+      .hl-item:last-child { border-bottom: none !important; }
+      .hl-item::after { display: none !important; }
+      .highlight-band { padding: 48px 0; }
+      .services-intro { padding: 48px 0 28px; }
+      .intro-heading { font-size: clamp(24px, 6vw, 36px); }
+      .intro-sub { font-size: 16px; }
+      .services-grid { padding: 0 0 60px; }
+      .svc-card .card-img { height: 220px; }
+      .svc-card .card-body { padding: 22px 22px 26px; }
+      .svc-card h3 { font-size: 18px; }
+      .card-cta { padding: 10px 18px; font-size: 10px; }
+      .cta-banner { padding: 60px 0; }
+      .cta-banner h2 { font-size: clamp(26px, 7vw, 38px); }
+      .cta-banner p { font-size: 16px; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .btn-cta-primary, .btn-cta-ghost { width: 100%; max-width: 280px; text-align: center; }
+      #footer .footer-top { padding: 48px 0 32px; }
+    }
+
+    /* Small mobile: ≤ 480px */
+    @media (max-width: 480px) {
+      .hero-title { font-size: 38px; }
+      .hero-inner { padding: 100px 0 64px; }
+      .svc-card .card-img { height: 200px; }
+    }
+
+    /* ═══════════════════════════════════════
+       ✅ ROBUST MOBILE NAV FIX — ALWAYS ON TOP
+       (replaces previous incomplete fixes)
+    ═══════════════════════════════════════ */
+    @media (max-width: 1279px) {
+      /* Force header to stay above background but below menu */
+      #header.header {
+        z-index: 9999 !important;
+      }
+
+      /* Toggle icons: always clickable, above header */
+      .mobile-nav-toggle {
+        z-index: 10001 !important;
+        position: relative !important;
+        color: #fff;
+      }
+
+      /* The mobile menu container (navbar) */
+      #navbar.navbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        z-index: 10000 !important; /* below toggle icons but above everything else */
+        pointer-events: none; /* allow clicks to pass through when hidden */
+      }
+
+      /* Mobile menu active state — activate via body class (common pattern) */
+      body.mobile-nav-active #navbar.navbar {
+        pointer-events: auto !important;
+      }
+
+      /* The UL is the actual menu panel */
+      #navbar.navbar ul {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: rgba(13,27,42,0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        margin: 0 !important;
+        padding: 80px 0 30px 0 !important; /* space for header */
+        list-style: none !important;
+        overflow-y: auto !important;
+        z-index: 10000 !important;
+        display: none; /* hidden by default */
+        flex-direction: column !important;
+        border: none !important;
+      }
+
+      /* Show UL when mobile menu active */
+      body.mobile-nav-active #navbar.navbar ul {
+        display: flex !important;
+      }
+
+      /* Dark overlay behind the menu (pseudo-element on navbar) */
+      #navbar.navbar::before {
+        content: '' !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0,0,0,0.65) !important;
+        z-index: 9999 !important; /* behind the menu UL (z-index 10000) */
+        backdrop-filter: blur(4px) !important;
+        display: none; /* hidden by default */
+      }
+
+      body.mobile-nav-active #navbar.navbar::before {
+        display: block !important;
+      }
+
+      /* Style the nav links for mobile */
+      #navbar.navbar ul li {
+        width: 100% !important;
+        border-bottom: 1px solid rgba(201,168,76,0.1) !important;
+      }
+
+      #navbar.navbar ul li a {
+        display: block !important;
+        padding: 18px 30px !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.12em !important;
+        text-transform: uppercase !important;
+        color: rgba(255,255,255,0.9) !important;
+        text-decoration: none !important;
+        transition: all 0.3s !important;
+      }
+
+      #navbar.navbar ul li a:hover,
+      #navbar.navbar ul li a.active {
+        color: var(--gold, #c9a84c) !important;
+        background: rgba(201,168,76,0.1) !important;
+        padding-left: 40px !important;
+      }
+
+      /* Ensure any page content does not overlap */
+      #hero.hero, .services-hero, .breadcrumbs, #main, main,
+      section, footer, .service-strip, .about, .stats-counter,
+      .alt-services, .project-details {
+        z-index: 1 !important;
+        position: relative !important;
+      }
+    }
+  </style>
 </head>
 
-<body class="index-page">
+<body>
 
-<!-- ======= Header ======= -->
-<header id="header" class="header d-flex align-items-center">
-  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1>MT Travels and Tours<span>.</span></h1>
+      </a>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html" class="active">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <a href="index.html" class="logo d-flex align-items-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-
-    </a>
-
-    <i class="mobile-nav-toggle mobile-nav-show bi bi-list" style="color: black;"></i>
-    <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
-    <nav id="navbar" class="navbar">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="service.html" class="active">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav><!-- .navbar -->
-  </div>
-</header>
-
-<main class="main">
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Featured Services<br></p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-5">
-
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-item">
-              <div class="img">
-                <img src="assets/img/hero-carousel/R (5).jfif" class="img-fluid" alt="">
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-activity" style="color: white;"></i>
-                </div>
-                <a href="./forms/Air/index.html" class="stretched-link">
-                  <h3>Air Ticket Reservation</h3>
-                </a>
-                <p>Get anywhere you need to with MT TRAVELS AND TOURS.</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-            <div class="service-item">
-              <div class="img">
-                <img src="assets/hotel.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-house" style="color: white;"></i>
-                </div>
-                <a href="./forms/Hotel/index.html" class="stretched-link">
-                  <h3>Hotel Reservation</h3>
-                </a>
-                <p>Travel with comfort because with MT TRAVELS AND TOURS we offer you just that.</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-            <div class="service-item">
-              <div class="img">
-                <img src="assets/touirist.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-globe" style="color: white;"></i>
-                </div>
-                <a href="./forms/Tourist/index.html" class="stretched-link">
-                  <h3>Touristic Packages</h3>
-                </a>
-                <p>If you feel like relaxing, get out on a touristic trip—we handle that.</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-            <div class="service-item">
-              <div class="img">
-                <img src="assets/training.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="details position-relative">
-                <div class="icon">
-                  <i class="bi bi-book" style="color: white;"></i>
-                </div>
-                <a href="./forms/Training/index.html" class="stretched-link">
-                  <h3>Training on Ticket Reservation</h3>
-                </a>
-                <p>At MT TRAVELS AND TOURS, we offer trainings in the field of reservation services.</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-        
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-
-     <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>MT Travels and Tours</h3>
-            <p>
-              AKWA <br>
-              Douala, AKWA<br>
-              Cameroon <br><br>
-              <strong>Phone:</strong> 677875361<br>
-              <strong>Email:</strong> michealtufoin@yahoo.com<br>
-            </p>
-          </div>
-
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Air/index.html">Air Reservation</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Hotel/index.html">Hotel Booking</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Tourist/index.html">Touristic Packages</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Training/index.html">Training Ticket Reservation</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Client's Community</h4>
-            <p>Be one of our permanent clients and join our group to see the latest flights at cheap prices.</p>
-            <form action="https://chat.whatsapp.com/Bn6myYJ2ijM76p38basp0O" method="">
-              <input type="email" name="email">
-              <a href="https://chat.whatsapp.com/Bn6myYJ2ijM76p38basp0O"><input type="submit" value="Join Now"></a>
-            </form>
-          </div>
-
-        </div>
+  <!-- ======= Hero ======= -->
+  <section class="services-hero">
+    <!-- Right: Flight attendant image -->
+    <div class="hero-img-panel">
+      <img src="assets/img/attent.jpg" alt="Flight Attendant">
+      <div class="hero-img-frame"></div>
+      <div class="hero-img-frame-tl"></div>
+      <div class="hero-img-tag">
+        <strong>13+</strong>
+        <span>Airline Partners</span>
       </div>
     </div>
 
-    <div class="container d-md-flex py-4">
+    <div class="hero-gold-line"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">What we offer</div>
+      <h1 class="hero-title">
+        Our<br><em>Services</em>
+      </h1>
+      <p class="hero-sub">Everything you need for a seamless journey — flights, stays, experiences, and expertise.</p>
+      <div class="hero-breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">◆</span>
+        <span>Services</span>
+      </div>
+    </div>
+  </section>
 
+  <!-- ======= Why Us Highlights ======= -->
+  <div class="highlight-band">
+    <div class="container">
+      <div class="highlight-inner">
+        <div class="hl-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="hl-icon"><i class="bi bi-shield-check"></i></div>
+          <div class="hl-title">Best Price Guarantee</div>
+          <div class="hl-desc">We match or beat any comparable fare on the market.</div>
+        </div>
+        <div class="hl-item" data-aos="fade-up" data-aos-delay="180">
+          <div class="hl-icon"><i class="bi bi-lightning-charge"></i></div>
+          <div class="hl-title">Fast Confirmation</div>
+          <div class="hl-desc">Your reservation confirmed within 24 hours, always.</div>
+        </div>
+        <div class="hl-item" data-aos="fade-up" data-aos-delay="260">
+          <div class="hl-icon"><i class="bi bi-headset"></i></div>
+          <div class="hl-title">Expert Support</div>
+          <div class="hl-desc">A dedicated team ready to assist at every step.</div>
+        </div>
+        <div class="hl-item" data-aos="fade-up" data-aos-delay="340">
+          <div class="hl-icon"><i class="bi bi-globe2"></i></div>
+          <div class="hl-title">80+ Destinations</div>
+          <div class="hl-desc">Local and international routes across Africa and beyond.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Section Intro ======= -->
+  <div class="services-intro" data-aos="fade-up">
+    <span class="intro-label">Featured Services</span>
+    <h2 class="intro-heading">Choose Your Experience</h2>
+    <p class="intro-sub">From the first booking to the last check-out — we take care of every detail.</p>
+    <div class="intro-rule"></div>
+  </div>
+
+  <!-- ======= Service Cards ======= -->
+  <section class="services-grid">
+    <div class="container">
+      <div class="row gy-4">
+
+        <!-- Air Ticket -->
+        <div class="col-xl-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="svc-card">
+            <div class="card-img">
+              <img src="assets/img/hero-carousel/R (5).jfif" alt="Air Ticket Reservation" loading="lazy" decoding="async">
+              <div class="card-number">01</div>
+              <div class="card-icon-pill"><i class="bi bi-airplane"></i></div>
+            </div>
+            <div class="card-body">
+              <h3>Air Ticket Reservation</h3>
+              <p>Partner airlines spanning Africa, Europe and beyond — we find the right flight at the right price. Ethiopian, Turkish, Air France, Kenya Airways and 9 more carriers, all in one place.</p>
+              <a href="./forms/Air/index.html" class="card-cta">
+                Book a Flight <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hotel -->
+        <div class="col-xl-6 col-lg-6" data-aos="fade-up" data-aos-delay="180">
+          <div class="svc-card">
+            <div class="card-img">
+              <img src="assets/hotel.jpg" alt="Hotel Reservation" loading="lazy" decoding="async">
+              <div class="card-number">02</div>
+              <div class="card-icon-pill"><i class="bi bi-building"></i></div>
+            </div>
+            <div class="card-body">
+              <h3>Hotel Reservation</h3>
+              <p>Comfort shouldn't cost a fortune. We curate vetted hotels at every budget — from business stays to luxury retreats — so your accommodation is always ready when you land.</p>
+              <a href="./forms/Hotel/index.html" class="card-cta">
+                Book a Hotel <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tourist Packages -->
+        <div class="col-xl-6 col-lg-6" data-aos="fade-up" data-aos-delay="260">
+          <div class="svc-card">
+            <div class="card-img">
+              <img src="assets/touirist.jpg" alt="Touristic Packages" loading="lazy" decoding="async">
+              <div class="card-number">03</div>
+              <div class="card-icon-pill"><i class="bi bi-map"></i></div>
+            </div>
+            <div class="card-body">
+              <h3>Touristic Packages</h3>
+              <p>Curated short trips and full packages for families, couples, and groups. Relax, explore, and create memories — we handle the logistics from start to finish.</p>
+              <a href="./forms/Tourist/index.html" class="card-cta">
+                Explore Packages <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Training -->
+        <div class="col-xl-6 col-lg-6" data-aos="fade-up" data-aos-delay="340">
+          <div class="svc-card">
+            <div class="card-img">
+              <img src="assets/training.jpg" alt="Training on Ticket Reservation" loading="lazy" decoding="async">
+              <div class="card-number">04</div>
+              <div class="card-icon-pill"><i class="bi bi-mortarboard"></i></div>
+            </div>
+            <div class="card-body">
+              <h3>Training on Ticket Reservation</h3>
+              <p>Want to work in the travel industry? Our professional training program covers the full reservation workflow — equipping you with the skills airlines and agencies demand.</p>
+              <a href="./forms/Training/index.html" class="card-cta">
+                Get Trained <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= CTA Banner ======= -->
+  <div class="cta-banner" data-aos="fade-up">
+    <span class="eyebrow">Ready to travel?</span>
+    <h2>Let's plan your <em>next journey</em></h2>
+    <p>Tell us where you want to go — we handle everything else.</p>
+    <div class="cta-buttons">
+      <a href="./forms/Air/index.html" class="btn-cta-primary">Book a Flight</a>
+      <a href="contact.html" class="btn-cta-ghost">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>MT Travels and Tours</h3>
+            <p>AKWA<br>Douala, AKWA<br>Cameroon<br><br>
+              <strong>Phone:</strong> 677 875 361<br>
+              <strong>Email:</strong> michealtufoin@yahoo.com
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Air/index.html">Air Reservation</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Hotel/index.html">Hotel Booking</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Tourist/index.html">Touristic Packages</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Training/index.html">Training Ticket Reservation</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Client's Community</h4>
+            <p>Be one of our permanent clients and get the latest flights at the best prices.</p>
+            <form action="https://chat.whatsapp.com/Bn6myYJ2ijM76p38basp0O" method="">
+              <input type="email" name="email" placeholder="Your email address">
+              <a href="https://chat.whatsapp.com/Bn6myYJ2ijM76p38basp0O"><input type="submit" value="Join Now"></a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container d-md-flex py-4">
       <div class="me-md-auto text-center text-md-start">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Zamiel</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          Designed by <a href="https://bootstrapmade.com/">ZamielMorningstar</a>
-        </div>
+        <div class="copyright">&copy; Copyright <strong><span>Zamiel</span></strong>. All Rights Reserved</div>
+        <div class="credits">Designed by <a href="#">ZamielMorningstar</a></div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -209,26 +1008,37 @@
         <a href="https://cm.linkedin.com/company/psvvoyages#main-content" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
-  <main id="main">
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
 
-    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- Vendor JS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
 
-    <div id="preloader"></div>
-
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
-
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      const header = document.getElementById('header');
+      // Start scrolled since hero has dark bg
+      header.style.background = 'rgba(13,27,42,0.85)';
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) {
+          header.classList.add('scrolled');
+          header.style.background = '';
+        } else {
+          header.classList.remove('scrolled');
+          header.style.background = 'rgba(13,27,42,0.85)';
+        }
+      });
+    })();
+  </script>
 
 </body>
-
 </html>

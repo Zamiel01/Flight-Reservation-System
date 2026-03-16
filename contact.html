@@ -4,10 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>MT Travels and Tours</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>MT Travels and Tours — Contact</title>
+  <meta content="Get in touch with MT Travels and Tours in Douala, Cameroon." name="description">
 
   <!-- Favicons -->
   <link href="assets/img/psv.png" rel="icon">
@@ -16,9 +14,9 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
+  <!-- Vendor CSS -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -26,16 +24,578 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- Base CSS -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: UpConstruction
-  * Updated: Jul 27 2023 with Bootstrap v5.3.1
-  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- ✦ CONTACT PAGE STYLES ✦ -->
+  <style>
+    /* ─── Tokens ─────────────────────────────────────── */
+    :root {
+      --navy:        #0d1b2a;
+      --navy-mid:    #162336;
+      --navy-light:  #1e3050;
+      --gold:        #c9a84c;
+      --gold-light:  #e8c97a;
+      --gold-pale:   #f5e9c8;
+      --cream:       #faf7f0;
+      --white:       #ffffff;
+      --text-dark:   #0d1b2a;
+      --text-mid:    #3a4a5c;
+      --text-muted:  #7a8b9c;
+      --font-display:'Playfair Display', Georgia, serif;
+      --font-italic: 'Cormorant Garamond', serif;
+      --font-body:   'DM Sans', sans-serif;
+      --radius:       4px;
+      --t:            0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: var(--font-body); background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+
+    /* ─── PRELOADER / SCROLL TOP ─────────────────────── */
+    #preloader:before { border-color: var(--gold) transparent var(--gold) transparent; }
+    .scroll-top { background: var(--gold) !important; }
+    .scroll-top i { color: var(--navy) !important; }
+
+    /* ─── HEADER ─────────────────────────────────────── */
+    .header {
+      background: transparent;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 20px 0;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 997;
+      transition: background var(--t), padding var(--t);
+    }
+    .header.scrolled {
+      background: rgba(13,27,42,0.97);
+      padding: 14px 0;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+    }
+    .header .logo h1 {
+      font-family: var(--font-display);
+      font-size: 22px; font-weight: 700;
+      color: #fff; margin: 0;
+      letter-spacing: 0.02em;
+    }
+    .header .logo h1 span { color: var(--gold); }
+    @media (min-width: 1280px) {
+      .navbar a, .navbar a:focus {
+        font-family: var(--font-body);
+        font-size: 11px; letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.7); font-weight: 500;
+      }
+      .navbar a:hover, .navbar .active { color: var(--gold) !important; }
+      .navbar>ul>li>a:before { background: var(--gold); }
+    }
+
+    /* ─── HERO BREADCRUMB ────────────────────────────── */
+    .breadcrumbs {
+      padding: 0;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-size: cover;
+      background-position: center center;
+      overflow: hidden;
+    }
+    .breadcrumbs::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to right, rgba(13,27,42,0.82) 0%, rgba(13,27,42,0.45) 50%, rgba(13,27,42,0.25) 100%),
+        linear-gradient(to top, rgba(13,27,42,0.6) 0%, transparent 45%);
+    }
+    .breadcrumbs::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 100px;
+      background: linear-gradient(to top, var(--cream), transparent);
+    }
+    .breadcrumbs .container {
+      position: relative; z-index: 2;
+      text-align: left;
+      padding-top: 120px;
+      max-width: 680px;
+      margin-left: 0;
+    }
+    .breadcrumbs .eyebrow {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 11px; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold);
+      padding: 6px 18px;
+      border: 1px solid rgba(201,168,76,0.35);
+      border-radius: 50px; margin-bottom: 20px;
+    }
+    .breadcrumbs h2 {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 8vw, 88px);
+      font-weight: 900; color: #fff;
+      line-height: 1.0; letter-spacing: -0.025em;
+      margin-bottom: 10px;
+    }
+    .breadcrumbs h2 em { font-style: italic; color: var(--gold-light); font-weight: 400; }
+    .breadcrumbs ol {
+      justify-content: flex-start;
+      font-family: var(--font-body);
+      font-size: 13px; letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.5);
+      display: flex; flex-wrap: wrap;
+      list-style: none; padding: 0; margin: 0;
+    }
+    .breadcrumbs ol a { color: rgba(255,255,255,0.65); }
+    .breadcrumbs ol li+li { padding-left: 10px; }
+    .breadcrumbs ol li+li::before {
+      display: inline-block; padding-right: 10px;
+      color: var(--gold); content: '◆'; font-size: 8px;
+    }
+
+    /* ─── CONTACT INFO CARDS ──────────────────────────── */
+    #contact.contact { padding: 80px 0 0; }
+
+    .contact-card {
+      background: var(--white);
+      border: 1px solid rgba(201,168,76,0.14);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      text-align: center;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+      box-shadow: 0 4px 24px rgba(13,27,42,0.05);
+    }
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0;
+      transition: opacity var(--t);
+    }
+    .contact-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 56px rgba(13,27,42,0.1);
+      border-color: var(--gold);
+    }
+    .contact-card:hover::before { opacity: 1; }
+
+    .card-icon-wrap {
+      width: 64px; height: 64px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 26px; color: var(--gold);
+      box-shadow: 0 8px 28px rgba(13,27,42,0.2);
+      transition: transform var(--t);
+    }
+    .contact-card:hover .card-icon-wrap { transform: scale(1.08) rotate(-3deg); }
+
+    .contact-card h3 {
+      font-family: var(--font-display);
+      font-size: 16px; font-weight: 700;
+      color: var(--navy); margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+    .contact-card p, .contact-card a p {
+      font-family: var(--font-body);
+      font-size: 14px; color: var(--text-muted);
+      margin: 0; line-height: 1.6;
+    }
+    .contact-card a { text-decoration: none; color: inherit; }
+    .contact-card a:hover p { color: var(--gold); }
+
+    /* ─── MAP + FORM SECTION ─────────────────────────── */
+    .contact-body {
+      padding: 56px 0 100px;
+    }
+
+    /* Map wrapper */
+    .map-wrapper {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 16px 64px rgba(13,27,42,0.12);
+      height: 100%;
+      min-height: 480px;
+    }
+    .map-wrapper iframe {
+      width: 100%; height: 100%;
+      min-height: 480px;
+      display: block; border: 0;
+      filter: grayscale(20%) contrast(1.05);
+    }
+    /* Gold frame accent */
+    .map-wrapper::after {
+      content: '';
+      position: absolute;
+      top: -12px; right: -12px;
+      bottom: 12px; left: 12px;
+      border: 2px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius);
+      z-index: -1;
+      pointer-events: none;
+    }
+    /* Map label badge */
+    .map-badge {
+      position: absolute;
+      top: 20px; left: 20px;
+      background: var(--navy);
+      border-left: 3px solid var(--gold);
+      padding: 10px 16px;
+      z-index: 2;
+    }
+    .map-badge span {
+      font-family: var(--font-display);
+      font-size: 13px; font-weight: 700;
+      color: var(--white); display: block;
+    }
+    .map-badge small {
+      font-family: var(--font-body);
+      font-size: 11px; letter-spacing: 0.1em;
+      color: var(--gold);
+    }
+
+    /* ─── CONTACT FORM ───────────────────────────────── */
+    .form-panel {
+      background: var(--white);
+      border: 1px solid rgba(201,168,76,0.12);
+      border-radius: var(--radius);
+      padding: 48px 44px;
+      box-shadow: 0 8px 40px rgba(13,27,42,0.07);
+      height: 100%;
+    }
+    @media (max-width: 768px) { .form-panel { padding: 36px 28px; } }
+
+    .form-header { margin-bottom: 32px; }
+    .form-eyebrow {
+      font-family: var(--font-body);
+      font-size: 11px; letter-spacing: 0.28em;
+      text-transform: uppercase; color: var(--gold);
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 10px;
+    }
+    .form-eyebrow::before {
+      content: '';
+      width: 28px; height: 1px;
+      background: var(--gold); flex-shrink: 0;
+    }
+    .form-header h3 {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 700; color: var(--navy);
+      letter-spacing: -0.02em; margin: 0;
+    }
+    .form-header h3 em {
+      font-style: italic; font-weight: 400;
+      color: var(--text-mid);
+    }
+
+    /* Form inputs */
+    .php-email-form .form-group { margin-bottom: 0; }
+    .php-email-form .form-control {
+      font-family: var(--font-body);
+      font-size: 14px;
+      background: var(--cream);
+      border: 1px solid rgba(13,27,42,0.1);
+      border-radius: var(--radius);
+      padding: 14px 18px;
+      color: var(--text-dark);
+      transition: border-color var(--t), box-shadow var(--t), background var(--t);
+      box-shadow: none;
+    }
+    .php-email-form .form-control::placeholder { color: var(--text-muted); }
+    .php-email-form .form-control:focus {
+      border-color: var(--gold);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(201,168,76,0.12);
+      outline: none;
+    }
+    .php-email-form textarea.form-control { resize: vertical; min-height: 130px; }
+
+    /* Form grid spacing */
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .form-single { margin-bottom: 14px; }
+    @media (max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+
+    /* Submit button */
+    .btn-send {
+      width: 100%;
+      padding: 16px;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      border: 2px solid var(--navy);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background var(--t), color var(--t), border-color var(--t), transform var(--t), box-shadow var(--t);
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      margin-top: 6px;
+    }
+    .btn-send:hover {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(201,168,76,0.3);
+    }
+    .btn-send i { font-size: 16px; }
+
+    /* Form state messages */
+    .php-email-form .loading,
+    .php-email-form .error-message,
+    .php-email-form .sent-message {
+      font-family: var(--font-body);
+      font-size: 13px;
+      border-radius: var(--radius);
+      padding: 12px 16px;
+      margin-bottom: 14px;
+    }
+    .php-email-form .loading { background: rgba(201,168,76,0.08); color: var(--text-mid); display: none; }
+    .php-email-form .error-message { background: rgba(220,53,69,0.08); color: #dc3545; border: 1px solid rgba(220,53,69,0.2); display: none; }
+    .php-email-form .sent-message { background: rgba(25,135,84,0.08); color: #198754; border: 1px solid rgba(25,135,84,0.2); display: none; }
+
+    /* ─── SIDE INFO STRIP ────────────────────────────── */
+    .contact-side-info {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      margin-top: 16px;
+    }
+    .side-info-title {
+      font-family: var(--font-display);
+      font-size: 18px; font-weight: 700;
+      color: var(--white); margin-bottom: 20px;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding-bottom: 16px;
+    }
+    .side-info-row {
+      display: flex; gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+    .side-info-row:last-child { margin-bottom: 0; }
+    .side-info-icon {
+      width: 38px; height: 38px;
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; color: var(--gold);
+      flex-shrink: 0;
+    }
+    .side-info-text strong {
+      display: block;
+      font-family: var(--font-body);
+      font-size: 11px; letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 3px;
+    }
+    .side-info-text span {
+      font-family: var(--font-body);
+      font-size: 14px; color: rgba(255,255,255,0.8);
+    }
+    .side-info-text a {
+      color: var(--gold); text-decoration: none;
+      transition: color var(--t);
+    }
+    .side-info-text a:hover { color: var(--gold-light); }
+
+    /* Social row */
+    .contact-social {
+      display: flex; gap: 10px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(201,168,76,0.12);
+    }
+    .contact-social a {
+      width: 38px; height: 38px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(201,168,76,0.15);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: background var(--t), border-color var(--t), color var(--t);
+    }
+    .contact-social a:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    #footer {
+      background: var(--navy-mid);
+      color: rgba(255,255,255,0.65);
+      box-shadow: none;
+    }
+    #footer .footer-top {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      padding: 60px 0 40px;
+    }
+    #footer .footer-top .footer-contact h3 {
+      font-family: var(--font-display);
+      color: var(--white); font-size: 20px; font-weight: 700;
+    }
+    #footer .footer-top .footer-contact p { color: rgba(255,255,255,0.5); }
+    #footer .footer-top h4 {
+      font-family: var(--font-display);
+      color: var(--white); font-size: 15px; font-weight: 600;
+    }
+    #footer .footer-top .footer-links ul a { color: rgba(255,255,255,0.5); }
+    #footer .footer-top .footer-links ul a:hover { color: var(--gold); }
+    #footer .footer-top .footer-links ul i { color: var(--gold); }
+    #footer .footer-newsletter form {
+      border-color: rgba(201,168,76,0.22);
+      background: rgba(255,255,255,0.04);
+    }
+    #footer .footer-newsletter form input[type=email] { background: transparent; color: #fff; }
+    #footer .footer-newsletter form input[type=email]::placeholder { color: rgba(255,255,255,0.28); }
+    #footer .footer-newsletter form input[type=submit] {
+      background: var(--gold); color: var(--navy); font-weight: 600;
+    }
+    #footer .footer-newsletter form input[type=submit]:hover { background: var(--gold-light); }
+    #footer .social-links a {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.12);
+      color: rgba(255,255,255,0.55);
+    }
+    #footer .social-links a:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+    .py-4 { background: rgba(0,0,0,0.22); border-top: 1px solid rgba(201,168,76,0.07); }
+    #footer .copyright, #footer .credits { color: rgba(255,255,255,0.32); }
+    #footer .credits a { color: var(--gold); }
+
+    /* ─── Animations ─────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .breadcrumbs .eyebrow { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+    .breadcrumbs h2       { animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+    .breadcrumbs ol       { animation: fadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0.45s both; }
+  
+    /* ═══════════════════════════════════════
+       ✅ ROBUST MOBILE NAV FIX — ALWAYS ON TOP
+       (replaces previous incomplete fixes)
+    ═══════════════════════════════════════ */
+    @media (max-width: 1279px) {
+      /* Force header to stay above background but below menu */
+      #header.header {
+        z-index: 9999 !important;
+      }
+
+      /* Toggle icons: always clickable, above header */
+      .mobile-nav-toggle {
+        z-index: 10001 !important;
+        position: relative !important;
+        color: #fff;
+      }
+
+      /* The mobile menu container (navbar) */
+      #navbar.navbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        z-index: 10000 !important; /* below toggle icons but above everything else */
+        pointer-events: none; /* allow clicks to pass through when hidden */
+      }
+
+      /* Mobile menu active state — activate via body class (common pattern) */
+      body.mobile-nav-active #navbar.navbar {
+        pointer-events: auto !important;
+      }
+
+      /* The UL is the actual menu panel */
+      #navbar.navbar ul {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: rgba(13,27,42,0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        margin: 0 !important;
+        padding: 80px 0 30px 0 !important; /* space for header */
+        list-style: none !important;
+        overflow-y: auto !important;
+        z-index: 10000 !important;
+        display: none; /* hidden by default */
+        flex-direction: column !important;
+        border: none !important;
+      }
+
+      /* Show UL when mobile menu active */
+      body.mobile-nav-active #navbar.navbar ul {
+        display: flex !important;
+      }
+
+      /* Dark overlay behind the menu (pseudo-element on navbar) */
+      #navbar.navbar::before {
+        content: '' !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0,0,0,0.65) !important;
+        z-index: 9999 !important; /* behind the menu UL (z-index 10000) */
+        backdrop-filter: blur(4px) !important;
+        display: none; /* hidden by default */
+      }
+
+      body.mobile-nav-active #navbar.navbar::before {
+        display: block !important;
+      }
+
+      /* Style the nav links for mobile */
+      #navbar.navbar ul li {
+        width: 100% !important;
+        border-bottom: 1px solid rgba(201,168,76,0.1) !important;
+      }
+
+      #navbar.navbar ul li a {
+        display: block !important;
+        padding: 18px 30px !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.12em !important;
+        text-transform: uppercase !important;
+        color: rgba(255,255,255,0.9) !important;
+        text-decoration: none !important;
+        transition: all 0.3s !important;
+      }
+
+      #navbar.navbar ul li a:hover,
+      #navbar.navbar ul li a.active {
+        color: var(--gold, #c9a84c) !important;
+        background: rgba(201,168,76,0.1) !important;
+        padding-left: 40px !important;
+      }
+
+      /* Ensure any page content does not overlap */
+      #hero.hero, .services-hero, .breadcrumbs, #main, main,
+      section, footer, .service-strip, .about, .stats-counter,
+      .alt-services, .project-details {
+        z-index: 1 !important;
+        position: relative !important;
+      }
+    }
+</style>
 </head>
 
 <body>
@@ -43,159 +603,202 @@
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>MT Travels and Tours<span>.</span></h1>
       </a>
-
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="service.html"  >Services</a></li>
+          <li><a href="service.html">Services</a></li>
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
-      </nav><!-- .navbar -->
+      </nav>
     </div>
-  </header><!-- End Header -->
+  </header>
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
+    <!-- ======= Hero Breadcrumb ======= -->
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/Hot.jpg');">
-      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
-
-        <h2>Contact</h2>
+      <div class="container-fluid container-xl position-relative d-flex flex-column" style="padding-left: 60px;">
+        <span class="eyebrow">We'd love to hear from you</span>
+        <h2>Get in <em>Touch</em></h2>
         <ol>
           <li><a href="index.html">Home</a></li>
           <li>Contact</li>
         </ol>
-
       </div>
-    </div><!-- End Breadcrumbs -->
+    </div>
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
+        <!-- ── Info Cards ── -->
         <div class="row gy-4">
-          <div class="col-lg-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-map"></i>
-              <h3>Our Address</h3>
-              <p>Akwa 742 Bd de la liberte, Douala</p>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="contact-card">
+              <div class="card-icon-wrap"><i class="bi bi-geo-alt-fill"></i></div>
+              <h3>Visit Us</h3>
+              <p>Akwa 742 Bd de la Liberté<br>Douala, Cameroon</p>
             </div>
-          </div><!-- End Info Item -->
+          </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-envelope"></i>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="180">
+            <div class="contact-card">
+              <div class="card-icon-wrap"><i class="bi bi-envelope-fill"></i></div>
               <h3>Email Us</h3>
-              <p>michealtufoin@yahoo.com</p>
+              <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b0ddd9d3d8d5d1dcc4c5d6dfd9def0c9d1d8dfdf9ed3dfdd">[email&#160;protected]</a></p>
             </div>
-          </div><!-- End Info Item -->
+          </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-telephone"></i>
-              <a href="tel:677875361"><h3>Call Us</h3></a>
-              <p>+237 677875361</p>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="260">
+            <div class="contact-card">
+              <a href="tel:+237677875361">
+                <div class="card-icon-wrap"><i class="bi bi-telephone-fill"></i></div>
+                <h3>Call Us</h3>
+                <p>+237 677 875 361</p>
+              </a>
             </div>
-          </div><!-- End Info Item -->
-
-        </div>
-
-        <div class="row gy-4 mt-1">
-
-          <div class="col-lg-6 ">
-            <iframe src="https://www.google.com/maps/embed/v1/place?q=MT+TRAVELS+AND+TOURS&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" width="578" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div><!-- End Google Maps -->
-
-          <div class="col-lg-6">
-            <form action="https://formsubmit.co/nkuinmbeng@email.com" method="post" role="form" class="php-email-form">
-              <div class="row gy-4">
-                <div class="col-lg-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-lg-6 form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div><!-- End Contact Form -->
-
+          </div>
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section>
 
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-
-    <div class="footer-top">
+    <!-- ══ Map + Form ══ -->
+    <div class="contact-body">
       <div class="container">
-        <div class="row">
+        <div class="row gy-5 align-items-stretch">
 
-          <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>MT Travels and Tours</h3>
-            <p>
-              AKWA <br>
-              Douala, AKWA<br>
-              Cameroon <br><br>
-              <strong>Phone:</strong>677875361<br>
-              <strong>Email:</strong>michealtufoin@yahoo.com<br>
-            </p>
+          <!-- Left: Map + side info -->
+          <div class="col-lg-5 d-flex flex-column gap-4" data-aos="fade-right" data-aos-delay="100">
+
+            <div class="map-wrapper flex-grow-1">
+              <div class="map-badge">
+                <span>MT Travels &amp; Tours</span>
+                <small>Douala · AKWA</small>
+              </div>
+              <iframe
+                src="https://www.google.com/maps/embed/v1/place?q=MT+TRAVELS+AND+TOURS&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+
+            <div class="contact-side-info">
+              <div class="side-info-title">Quick Contact</div>
+              <div class="side-info-row">
+                <div class="side-info-icon"><i class="bi bi-clock"></i></div>
+                <div class="side-info-text">
+                  <strong>Working Hours</strong>
+                  <span>Mon – Sat: 8:00 AM – 6:00 PM</span>
+                </div>
+              </div>
+              <div class="side-info-row">
+                <div class="side-info-icon"><i class="bi bi-whatsapp"></i></div>
+                <div class="side-info-text">
+                  <strong>WhatsApp</strong>
+                  <a href="https://chat.whatsapp.com/Bn6myYJ2ijM76p38basp0O">Join our client community →</a>
+                </div>
+              </div>
+              <div class="side-info-row">
+                <div class="side-info-icon"><i class="bi bi-geo-alt"></i></div>
+                <div class="side-info-text">
+                  <strong>Address</strong>
+                  <span>742 Bd de la Liberté, Akwa, Douala</span>
+                </div>
+              </div>
+              <div class="contact-social">
+                <a href="https://www.facebook.com/PSVvoyage1"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="#"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Air/index.html">Air Reservation</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Hotel/index.html">Hotel Booking</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Tourist/index.html">Touristic Packages</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Tourist/index.html">Training  Ticket Reservation</a></li>
-            </ul>
-          </div>
+          <!-- Right: Form -->
+          <div class="col-lg-7" data-aos="fade-left" data-aos-delay="200">
+            <div class="form-panel">
+              <div class="form-header">
+                <div class="form-eyebrow">Send a message</div>
+                <h3>How can we <em>help you?</em></h3>
+              </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Client's Community</h4>
-            <p>Be one of our permanent clients and join our group to see the latest flights at cheap prices.</p>
-            <form action="https://chat.whatsapp.com/Bn6myYJ2ijM76p38basp0O" method="">
-              <input type="email" name="email"><input type="submit" value="Join Now">
-            </form>
+              <form action="https://formsubmit.co/nkuinmbeng@email.com" method="post" class="php-email-form">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                  </div>
+                  <div class="form-group">
+                    <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                  </div>
+                </div>
+                <div class="form-single">
+                  <input type="text" name="subject" class="form-control" placeholder="Subject" required>
+                </div>
+                <div class="form-single">
+                  <textarea name="message" class="form-control" rows="6" placeholder="Tell us about your travel plans or how we can assist…" required></textarea>
+                </div>
+                <div class="my-3">
+                  <div class="loading">Sending your message…</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">✓ Your message has been sent. We'll be in touch soon!</div>
+                </div>
+                <button type="submit" class="btn-send">
+                  Send Message &nbsp;<i class="bi bi-send"></i>
+                </button>
+              </form>
+            </div>
           </div>
 
         </div>
       </div>
     </div>
 
-    <div class="container d-md-flex py-4">
+  </main>
 
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>MT Travels and Tours</h3>
+            <p>AKWA<br>Douala, AKWA<br>Cameroon<br><br>
+              <strong>Phone:</strong> 677 875 361<br>
+              <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="036e6a606b66626f7776656c6a6d437a626b6c6c2d606c6e">[email&#160;protected]</a>
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Air/index.html">Air Reservation</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Hotel/index.html">Hotel Booking</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Tourist/index.html">Touristic Packages</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Tourist/index.html">Training Ticket Reservation</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Client's Community</h4>
+            <p>Be one of our permanent clients and get the latest flights at the best prices.</p>
+            <form action="https://chat.whatsapp.com/Bn6myYJ2ijM76p38basp0O" method="">
+              <input type="email" name="email" placeholder="Your email address">
+              <input type="submit" value="Join Now">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container d-md-flex py-4">
       <div class="me-md-auto text-center text-md-start">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Zamiel</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          Designed by <a href="https://bootstrapmade.com/">ZamielMorningstar</a>
-        </div>
+        <div class="copyright">&copy; Copyright <strong><span>Zamiel</span></strong>. All Rights Reserved</div>
+        <div class="credits">Designed by <a href="#">ZamielMorningstar</a></div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -205,24 +808,29 @@
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Vendor JS -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-</body>
+  <script>
+    (function () {
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+      });
+    })();
+  </script>
 
+</body>
 </html>

@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>MT Travels and Tours</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>MT Travels and Tours — Home</title>
+  <meta content="Premium air tickets, hotel bookings, and touristic packages from Douala, Cameroon." name="description">
 
   <!-- Favicons -->
   <link href="assets/img/psv.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts — loaded non-blocking to prevent render delay -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"></noscript>
 
-  <!-- Vendor CSS Files -->
+  <!-- Vendor CSS -->
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -28,16 +26,1027 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- Original base CSS -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: UpConstruction
-  * Updated: Jul 27 2023 with Bootstrap v5.3.1
-  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- ✦ PERFORMANCE: preload first hero image so it paints immediately ✦ -->
+  <link rel="preload" as="image" href="assets/img/hero-carousel/R (1).jpg" fetchpriority="high">
+
+  <!-- ✦ PERFORMANCE: defer non-critical CSS ✦ -->
+  <style>
+    /* Prevent layout shift while images load */
+    .about-img, .img-bg { background-color: var(--navy-mid, #162336); }
+    .carousel-item { background-color: #0d1b2a; }
+  </style>
+
+  <!-- INDEX PAGE DESIGN OVERRIDES -->
+  <style>
+    /* ═══════════════════════════════════════
+       DESIGN TOKENS  (mirrors about.html)
+    ═══════════════════════════════════════ */
+    :root {
+      --navy:        #0d1b2a;
+      --navy-mid:    #162336;
+      --navy-light:  #1e3050;
+      --gold:        #c9a84c;
+      --gold-light:  #e8c97a;
+      --gold-pale:   #f5e9c8;
+      --cream:       #faf7f0;
+      --white:       #ffffff;
+      --text-dark:   #0d1b2a;
+      --text-mid:    #3a4a5c;
+      --text-muted:  #7a8b9c;
+      --font-display:'Playfair Display', Georgia, serif;
+      --font-italic: 'Cormorant Garamond', serif;
+      --font-body:   'DM Sans', sans-serif;
+      --radius:      4px;
+      --ease:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --t:           0.4s var(--ease);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ═══════════════════════════════════════
+       HEADER
+    ═══════════════════════════════════════ */
+    .header {
+      background: transparent;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 22px 0;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 997;
+      transition: background var(--t), padding var(--t);
+    }
+    .header.scrolled {
+      background: rgba(13,27,42,0.97);
+      padding: 14px 0;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.3);
+    }
+    .header .logo h1 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+      letter-spacing: 0.02em;
+    }
+    .header .logo h1 span { color: var(--gold); }
+
+    @media (min-width: 1280px) {
+      .navbar a, .navbar a:focus {
+        font-family: var(--font-body);
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.7);
+        font-weight: 500;
+      }
+      .navbar a:hover, .navbar .active { color: var(--gold) !important; }
+      .navbar>ul>li>a:before { background: var(--gold); }
+    }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    #hero.hero {
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero .carousel {
+      min-height: 100vh;
+      position: relative;
+    }
+    .hero .carousel-item {
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+    }
+    .hero .carousel-item::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, rgba(13,27,42,0.88) 0%, rgba(13,27,42,0.45) 55%, transparent 100%),
+        linear-gradient(to top,   rgba(13,27,42,0.65) 0%, transparent 55%),
+        linear-gradient(160deg,   rgba(201,168,76,0.07) 0%, transparent 60%);
+    }
+
+    /* Gold bottom rule */
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), rgba(201,168,76,0.2) 60%, transparent);
+      z-index: 10;
+    }
+
+    .hero .info {
+      position: absolute;
+      inset: 0;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+    }
+    .hero-content {
+      padding: 0 0 0 60px;
+      max-width: 760px;
+    }
+    @media (max-width: 768px) {
+      .hero-content { padding: 80px 28px 0; max-width: 100%; }
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 22px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 36px; height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(44px, 7vw, 90px);
+      font-weight: 900;
+      line-height: 1.0;
+      color: #fff;
+      letter-spacing: -0.025em;
+      margin: 0 0 8px;
+    }
+    .hero-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--gold-light);
+      display: block;
+    }
+
+    .hero-sub {
+      font-family: var(--font-italic);
+      font-size: clamp(16px, 2vw, 21px);
+      font-style: italic;
+      color: rgba(255,255,255,0.7);
+      margin: 22px 0 42px;
+      max-width: 460px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero-primary {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 16px 42px;
+      background: var(--gold);
+      color: var(--navy) !important;
+      border: none;
+      border-radius: var(--radius);
+      text-decoration: none;
+      display: inline-block;
+      transition: background var(--t), transform var(--t), box-shadow var(--t);
+      box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+    }
+    .btn-hero-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 48px rgba(201,168,76,0.5);
+    }
+
+    .btn-hero-ghost {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 15px 36px;
+      background: transparent;
+      color: rgba(255,255,255,0.85) !important;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: var(--radius);
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color var(--t), background var(--t), color var(--t);
+    }
+    .btn-hero-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold) !important;
+      background: rgba(201,168,76,0.08);
+    }
+
+    /* Carousel nav */
+    .hero .carousel-control-prev,
+    .hero .carousel-control-next {
+      width: 56px;
+      z-index: 6;
+    }
+    .hero .carousel-control-prev-icon,
+    .hero .carousel-control-next-icon {
+      background-image: none !important;
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      border: 1px solid rgba(201,168,76,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: rgba(255,255,255,0.8);
+      transition: background var(--t), border-color var(--t);
+      font-family: 'bootstrap-icons';
+    }
+    .hero .carousel-control-prev-icon::after { content: '\F284'; }
+    .hero .carousel-control-next-icon::after { content: '\F285'; }
+    .hero .carousel-control-prev:hover .carousel-control-prev-icon,
+    .hero .carousel-control-next:hover .carousel-control-next-icon {
+      background: rgba(201,168,76,0.18);
+      border-color: var(--gold);
+    }
+
+    /* Cream fade at bottom of hero */
+    .hero-fade-bottom {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 180px;
+      background: linear-gradient(to top, var(--cream), transparent);
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    /* Hero entry animations */
+    @keyframes heroUp {
+      from { opacity: 0; transform: translateY(36px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow { animation: heroUp 0.9s var(--ease) 0.15s both; }
+    .hero-title   { animation: heroUp 1.0s var(--ease) 0.3s both; }
+    .hero-sub     { animation: heroUp 0.9s var(--ease) 0.5s both; }
+    .hero-actions { animation: heroUp 0.9s var(--ease) 0.66s both; }
+
+    /* ═══════════════════════════════════════
+       SERVICE STRIP
+    ═══════════════════════════════════════ */
+    .service-strip {
+      background: var(--navy);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .service-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .strip-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 28px 36px;
+      border-right: 1px solid rgba(201,168,76,0.08);
+      text-decoration: none !important;
+      transition: background var(--t);
+    }
+    .strip-item:last-child { border-right: none; }
+    .strip-item:hover { background: rgba(201,168,76,0.05); }
+    .strip-icon {
+      width: 44px; height: 44px;
+      border-radius: var(--radius);
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.18);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: var(--gold);
+      flex-shrink: 0;
+      transition: background var(--t);
+    }
+    .strip-item:hover .strip-icon { background: rgba(201,168,76,0.2); }
+    .strip-text strong {
+      display: block;
+      font-size: 13px; font-weight: 600;
+      color: #fff; letter-spacing: 0.02em;
+    }
+    .strip-text span {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.04em;
+    }
+    @media (max-width: 640px) {
+      .service-strip-inner { grid-template-columns: 1fr; }
+      .strip-item { border-right: none; border-bottom: 1px solid rgba(201,168,76,0.08); padding: 20px 28px; }
+      .strip-item:last-child { border-bottom: none; }
+    }
+
+    /* ═══════════════════════════════════════
+       AIR RESERVATION SECTION
+    ═══════════════════════════════════════ */
+    #about.about {
+      padding: 0;
+      background: var(--cream);
+    }
+    .about .row.position-relative { align-items: stretch; }
+
+    /* ── Image column ── */
+    .about .about-img {
+      min-height: 600px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .about .about-img::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(160deg, rgba(13,27,42,0.5) 0%, transparent 55%),
+                  linear-gradient(to top, rgba(13,27,42,0.7) 0%, transparent 50%);
+    }
+    .about .about-img::before {
+      content: 'Air\A Reservation';
+      white-space: pre;
+      position: absolute;
+      bottom: 30px; left: 30px;
+      z-index: 2;
+      font-family: var(--font-display);
+      font-size: 28px; font-weight: 700;
+      color: #fff; line-height: 1.2;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    .about .about-img .img-corner {
+      position: absolute; top: 20px; left: 20px;
+      width: 48px; height: 48px;
+      border-top: 2px solid var(--gold);
+      border-left: 2px solid var(--gold);
+      z-index: 3;
+    }
+    @media (max-width: 992px) {
+      .about .about-img { min-height: 340px; }
+    }
+
+    /* ① Main info pane */
+    .air-main-pane {
+      background: var(--white);
+      padding: 52px 56px 40px;
+    }
+    @media (max-width: 768px) { .air-main-pane { padding: 36px 28px 32px; } }
+
+    .about h2 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 3.5vw, 42px);
+      font-weight: 700; color: var(--navy);
+      letter-spacing: -0.02em; margin-bottom: 0;
+    }
+    .about .our-story {
+      background: transparent !important;
+      padding: 0 !important;
+      margin-top: 16px;
+    }
+    .about .our-story > p:first-child {
+      font-family: var(--font-italic);
+      font-size: 17px; font-style: italic;
+      color: var(--text-mid); line-height: 1.7;
+      border-left: 3px solid var(--gold);
+      padding-left: 18px; margin-bottom: 24px;
+    }
+    .about .our-story > p:last-of-type {
+      font-size: 13px; color: var(--text-muted); margin-top: 14px;
+    }
+    .about .our-story ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px,1fr));
+      gap: 8px; list-style: none;
+      padding: 0; margin: 0 0 14px;
+    }
+    .about .our-story ul li {
+      display: flex; align-items: center; gap: 8px;
+      padding: 9px 12px;
+      background: var(--cream);
+      border: 1px solid rgba(13,27,42,0.07);
+      border-radius: var(--radius);
+      font-size: 12px; font-weight: 500; color: var(--navy);
+      cursor: default;
+      transition: border-color var(--t), box-shadow var(--t), transform var(--t);
+    }
+    .about .our-story ul li:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 14px rgba(201,168,76,0.14);
+      transform: translateY(-2px);
+    }
+    .about .our-story ul li i { color: var(--gold); font-size: 12px; flex-shrink: 0; }
+    .about .our-story .watch-video { gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+    .about .our-story .watch-video img {
+      width: 46px !important; height: 46px;
+      object-fit: contain; border-radius: 8px;
+      background: var(--white);
+      border: 1px solid rgba(201,168,76,0.25);
+      padding: 4px; filter: grayscale(25%);
+      transition: filter var(--t), transform var(--t);
+    }
+    .about .our-story .watch-video img:hover { filter: grayscale(0%); transform: scale(1.1); }
+
+    /* ② Dark stats accent panel */
+    .air-accent-panel {
+      background: var(--navy);
+      padding: 32px 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+      border-top: 3px solid var(--gold);
+    }
+    @media (max-width: 768px) {
+      .air-accent-panel { grid-template-columns: 1fr; padding: 28px 28px; gap: 20px; }
+    }
+    .accent-stat {
+      text-align: center;
+      padding: 0 16px;
+      position: relative;
+    }
+    .accent-stat:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 10%; bottom: 10%;
+      width: 1px;
+      background: rgba(201,168,76,0.18);
+    }
+    @media (max-width: 768px) { .accent-stat:not(:last-child)::after { display: none; } }
+    .accent-stat .num {
+      font-family: var(--font-display);
+      font-size: 34px; font-weight: 700;
+      color: var(--gold); line-height: 1; display: block;
+    }
+    .accent-stat .lbl {
+      font-family: var(--font-body);
+      font-size: 10px; letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      display: block; margin-top: 5px;
+    }
+    .accent-stat .desc {
+      font-family: var(--font-italic);
+      font-size: 12px; font-style: italic;
+      color: rgba(255,255,255,0.5);
+      display: block; margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* ③ Gold promise strip */
+    .air-promise-strip {
+      background: var(--gold);
+      padding: 18px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 768px) { .air-promise-strip { padding: 18px 28px; } }
+    .promise-item {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-body);
+      font-size: 12px; font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--navy);
+      text-decoration: none !important;
+    }
+    .promise-item i { font-size: 17px; opacity: 0.75; }
+    .promise-cta {
+      background: var(--navy);
+      color: var(--gold) !important;
+      padding: 10px 22px;
+      border-radius: var(--radius);
+      transition: background var(--t), transform var(--t);
+    }
+    .promise-cta i { opacity: 1; color: var(--gold); }
+    .promise-cta:hover { background: var(--navy-light); transform: translateX(3px); }
+    .promise-divider {
+      width: 1px; height: 20px;
+      background: rgba(13,27,42,0.2);
+    }
+    @media (max-width: 640px) { .promise-divider { display: none; } }
+
+    /* ── Air CTA Card ─────────────────────── */
+    .air-cta-card {
+      margin-top: 28px;
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 32px 36px 28px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(201,168,76,0.18);
+      box-shadow: 0 16px 48px rgba(13,27,42,0.15);
+    }
+    .air-cta-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), rgba(201,168,76,0.25) 70%, transparent);
+    }
+    .air-cta-card::after {
+      content: '\F1D4';
+      font-family: 'bootstrap-icons';
+      position: absolute;
+      right: -10px; bottom: -16px;
+      font-size: 140px;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .air-cta-label {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .air-cta-heading {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+    .air-cta-heading em { font-style: normal; color: var(--gold); }
+    .air-cta-sub {
+      font-family: var(--font-italic);
+      font-style: italic;
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.5;
+      margin: 0 0 22px;
+    }
+    .air-cta-btn {
+      display: inline-flex;
+      align-items: center; gap: 8px;
+      font-family: var(--font-body);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 13px 32px;
+      background: var(--gold);
+      color: var(--navy) !important;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background var(--t), transform var(--t), box-shadow var(--t);
+      box-shadow: 0 6px 24px rgba(201,168,76,0.3);
+    }
+    .air-cta-btn:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(201,168,76,0.45);
+    }
+    .air-cta-divider {
+      height: 1px;
+      background: rgba(201,168,76,0.12);
+      margin: 22px 0 20px;
+    }
+    .air-trust-row { display: flex; gap: 24px; }
+    .air-trust-item {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-body);
+      font-size: 12px; font-weight: 500;
+      color: rgba(255,255,255,0.5);
+    }
+    .air-trust-item i { font-size: 15px; color: var(--gold); }
+    @media (max-width: 480px) {
+      .air-trust-row { flex-wrap: wrap; gap: 14px; }
+      .air-cta-card { padding: 24px 22px; }
+    }
+
+    /* ═══════════════════════════════════════
+       STATS COUNTER
+    ═══════════════════════════════════════ */
+    #stats-counter.stats-counter {
+      background: var(--navy) !important;
+      padding: 60px 0;
+      border-top: 1px solid rgba(201,168,76,0.1);
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+    }
+    .stats-counter .stats-item {
+      background: transparent !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      gap: 22px;
+    }
+    .stats-counter .stats-item i {
+      font-size: 28px;
+      width: 60px; height: 60px;
+      border-radius: var(--radius);
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.18);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold) !important;
+      line-height: 0; flex-shrink: 0;
+    }
+    .stats-counter .stats-item span {
+      font-family: var(--font-display);
+      font-size: 48px; font-weight: 700;
+      color: var(--gold) !important;
+      line-height: 1; display: block;
+    }
+    .stats-counter .stats-item p {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.42) !important;
+      margin: 6px 0 0;
+    }
+    .stats-counter .col-lg-3:not(:last-child) .stats-item {
+      border-right: 1px solid rgba(201,168,76,0.08);
+    }
+    @media (max-width: 767px) {
+      .stats-counter .col-lg-3 .stats-item {
+        border-right: none;
+        padding-bottom: 24px !important;
+        border-bottom: 1px solid rgba(201,168,76,0.08);
+      }
+    }
+
+    /* ═══════════════════════════════════════
+       HOTEL BOOKING
+    ═══════════════════════════════════════ */
+    #alt-services.alt-services {
+      padding: 110px 0;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    #alt-services::before {
+      content: 'HOTEL';
+      position: absolute;
+      right: -50px; top: -20px;
+      font-family: var(--font-display);
+      font-size: 240px; font-weight: 900;
+      color: rgba(13,27,42,0.022);
+      line-height: 1; pointer-events: none;
+    }
+
+    #alt-services .img-bg {
+      min-height: 520px;
+      border-radius: var(--radius);
+      background-size: cover; background-position: center;
+      position: relative; overflow: hidden;
+      box-shadow: 24px 24px 0 rgba(201,168,76,0.1);
+    }
+    #alt-services .img-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,27,42,0.5) 0%, transparent 55%);
+    }
+    @media (max-width: 992px) {
+      #alt-services .img-bg { min-height: 320px; box-shadow: none; }
+    }
+
+    #alt-services .col-lg-5 { padding-left: 56px; }
+    @media (max-width: 992px) { #alt-services .col-lg-5 { padding-left: 0; margin-top: 40px; } }
+
+    .alt-services h3 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 700; color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+    .alt-services h3::after { display: none !important; }
+
+    #alt-services > .container > .row > .col-lg-5 > p {
+      font-family: var(--font-italic);
+      font-style: italic; font-size: 17px;
+      color: var(--text-mid); line-height: 1.7;
+      border-left: 3px solid var(--gold);
+      padding-left: 18px; margin: 18px 0 32px;
+    }
+
+    .alt-services .icon-box {
+      padding: 20px 22px !important;
+      margin-top: 14px !important;
+      background: var(--cream);
+      border: 1px solid rgba(201,168,76,0.1);
+      border-radius: var(--radius);
+      gap: 18px;
+      transition: border-color var(--t), transform var(--t), box-shadow var(--t);
+      box-shadow: 0 2px 12px rgba(13,27,42,0.04);
+    }
+    .alt-services .icon-box:hover {
+      border-color: var(--gold);
+      transform: translateX(6px);
+      box-shadow: 0 8px 28px rgba(13,27,42,0.09);
+    }
+    .alt-services .icon-box i {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; color: var(--gold) !important;
+      flex-shrink: 0; margin-right: 0 !important;
+    }
+    .alt-services .icon-box h4 {
+      font-family: var(--font-display);
+      font-size: 15px; font-weight: 700;
+      color: var(--navy); margin-bottom: 4px;
+    }
+    .alt-services .icon-box h4 a { color: var(--navy) !important; transition: color var(--t); }
+    .alt-services .icon-box:hover h4 a { color: var(--gold) !important; }
+    .alt-services .icon-box p {
+      font-size: 13px; line-height: 1.6;
+      color: var(--text-muted); margin: 0;
+    }
+
+    /* ═══════════════════════════════════════
+       TOURISTIC PACKAGES
+    ═══════════════════════════════════════ */
+    #project-details.project-details {
+      background: var(--navy);
+      padding: 100px 0 120px;
+      position: relative; overflow: hidden;
+    }
+    #project-details::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    #project-details::after {
+      content: 'TOURS';
+      position: absolute;
+      bottom: -40px; right: -30px;
+      font-family: var(--font-display);
+      font-size: 200px; font-weight: 900;
+      color: rgba(255,255,255,0.025);
+      line-height: 1; pointer-events: none;
+    }
+
+    #project-details .section-header { padding-bottom: 48px; }
+    #project-details .section-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 5vw, 52px);
+      font-weight: 700; color: var(--white);
+      letter-spacing: -0.02em;
+    }
+    #project-details .section-header h2::before,
+    #project-details .section-header h2::after { background: var(--gold); }
+    #project-details .section-header p {
+      font-family: var(--font-italic);
+      font-style: italic; font-size: 17px;
+      color: rgba(255,255,255,0.5);
+      max-width: 540px; margin: 0 auto;
+    }
+
+    #project-details .position-relative {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+    }
+    #project-details .portfolio-details-slider img {
+      width: 100%; height: 500px;
+      object-fit: cover; border-radius: var(--radius);
+    }
+    @media (max-width: 768px) {
+      #project-details .portfolio-details-slider img { height: 260px; }
+    }
+
+    #project-details .swiper-pagination-bullet {
+      background: rgba(255,255,255,0.3); opacity: 1;
+      width: 8px; height: 8px;
+    }
+    #project-details .swiper-pagination-bullet-active {
+      background: var(--gold); width: 28px;
+      border-radius: 4px; transition: width 0.3s;
+    }
+    #project-details .swiper-button-prev,
+    #project-details .swiper-button-next {
+      width: 50px; height: 50px; border-radius: 50%;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      backdrop-filter: blur(8px);
+      transition: background var(--t);
+    }
+    #project-details .swiper-button-prev:hover,
+    #project-details .swiper-button-next:hover { background: var(--gold); }
+    #project-details .swiper-button-prev::after,
+    #project-details .swiper-button-next::after { font-size: 16px; color: #fff; }
+    #project-details .swiper-button-prev:hover::after,
+    #project-details .swiper-button-next:hover::after { color: var(--navy); }
+
+    .packages-cta { text-align: center; margin-top: 48px; }
+    .btn-packages {
+      display: inline-flex;
+      align-items: center; gap: 10px;
+      font-family: var(--font-body);
+      font-size: 11px; font-weight: 600;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 16px 48px;
+      background: var(--gold);
+      color: var(--navy) !important;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background var(--t), transform var(--t), box-shadow var(--t);
+      box-shadow: 0 8px 32px rgba(201,168,76,0.25);
+    }
+    .btn-packages:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 48px rgba(201,168,76,0.4);
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    #footer {
+      background: var(--navy-mid);
+      color: rgba(255,255,255,0.65);
+      box-shadow: none;
+    }
+    #footer .footer-top {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(201,168,76,0.1);
+      padding: 70px 0 40px;
+    }
+    #footer .footer-top .footer-contact h3 {
+      font-family: var(--font-display);
+      color: var(--white); font-size: 20px; font-weight: 700;
+      margin-bottom: 20px;
+    }
+    #footer .footer-top .footer-contact p { color: rgba(255,255,255,0.48); }
+    #footer .footer-top h4 {
+      font-family: var(--font-display);
+      color: var(--white); font-size: 15px; font-weight: 600;
+    }
+    #footer .footer-top .footer-links ul a { color: rgba(255,255,255,0.48); }
+    #footer .footer-top .footer-links ul a:hover { color: var(--gold); }
+    #footer .footer-top .footer-links ul i { color: var(--gold); }
+    #footer .footer-newsletter form {
+      border-color: rgba(201,168,76,0.22);
+      background: rgba(255,255,255,0.04);
+    }
+    #footer .footer-newsletter form input[type=email] {
+      background: transparent; color: #fff;
+    }
+    #footer .footer-newsletter form input[type=email]::placeholder { color: rgba(255,255,255,0.28); }
+    #footer .footer-newsletter form input[type=submit] {
+      background: var(--gold); color: var(--navy); font-weight: 600;
+    }
+    #footer .footer-newsletter form input[type=submit]:hover { background: var(--gold-light); }
+    #footer .social-links a {
+      background: rgba(201,168,76,0.08);
+      border: 1px solid rgba(201,168,76,0.12);
+      color: rgba(255,255,255,0.55);
+    }
+    #footer .social-links a:hover {
+      background: var(--gold); color: var(--navy);
+      border-color: var(--gold);
+    }
+    .py-4 {
+      background: rgba(0,0,0,0.22);
+      border-top: 1px solid rgba(201,168,76,0.07);
+    }
+    #footer .copyright, #footer .credits { color: rgba(255,255,255,0.32); }
+    #footer .credits a { color: var(--gold); }
+
+    /* ═══════════════════════════════════════
+       UTILITIES
+    ═══════════════════════════════════════ */
+    .scroll-top { background: var(--gold) !important; }
+    .scroll-top i { color: var(--navy) !important; }
+    #preloader:before { border-color: var(--gold) transparent var(--gold) transparent; }
+
+    /* ═══════════════════════════════════════
+       ✅ ROBUST MOBILE NAV FIX — ALWAYS ON TOP
+       (replaces previous incomplete fixes)
+    ═══════════════════════════════════════ */
+    @media (max-width: 1279px) {
+      /* Force header to stay above background but below menu */
+      #header.header {
+        z-index: 9999 !important;
+      }
+
+      /* Toggle icons: always clickable, above header */
+      .mobile-nav-toggle {
+        z-index: 10001 !important;
+        position: relative !important;
+        color: #fff;
+      }
+
+      /* The mobile menu container (navbar) */
+      #navbar.navbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        z-index: 10000 !important; /* below toggle icons but above everything else */
+        pointer-events: none; /* allow clicks to pass through when hidden */
+      }
+
+      /* Mobile menu active state — activate via body class (common pattern) */
+      body.mobile-nav-active #navbar.navbar {
+        pointer-events: auto !important;
+      }
+
+      /* The UL is the actual menu panel */
+      #navbar.navbar ul {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: rgba(13,27,42,0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        margin: 0 !important;
+        padding: 80px 0 30px 0 !important; /* space for header */
+        list-style: none !important;
+        overflow-y: auto !important;
+        z-index: 10000 !important;
+        display: none; /* hidden by default */
+        flex-direction: column !important;
+        border: none !important;
+      }
+
+      /* Show UL when mobile menu active */
+      body.mobile-nav-active #navbar.navbar ul {
+        display: flex !important;
+      }
+
+      /* Dark overlay behind the menu (pseudo-element on navbar) */
+      #navbar.navbar::before {
+        content: '' !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0,0,0,0.65) !important;
+        z-index: 9999 !important; /* behind the menu UL (z-index 10000) */
+        backdrop-filter: blur(4px) !important;
+        display: none; /* hidden by default */
+      }
+
+      body.mobile-nav-active #navbar.navbar::before {
+        display: block !important;
+      }
+
+      /* Style the nav links for mobile */
+      #navbar.navbar ul li {
+        width: 100% !important;
+        border-bottom: 1px solid rgba(201,168,76,0.1) !important;
+      }
+
+      #navbar.navbar ul li a {
+        display: block !important;
+        padding: 18px 30px !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.12em !important;
+        text-transform: uppercase !important;
+        color: rgba(255,255,255,0.9) !important;
+        text-decoration: none !important;
+        transition: all 0.3s !important;
+      }
+
+      #navbar.navbar ul li a:hover,
+      #navbar.navbar ul li a.active {
+        color: var(--gold, #c9a84c) !important;
+        background: rgba(201,168,76,0.1) !important;
+        padding-left: 40px !important;
+      }
+
+      /* Ensure any page content does not overlap */
+      #hero.hero, .services-hero, .breadcrumbs, #main, main,
+      section, footer, .service-strip, .about, .stats-counter,
+      .alt-services, .project-details {
+        z-index: 1 !important;
+        position: relative !important;
+      }
+    }
+</style>
 </head>
 
 <body>
@@ -45,268 +1054,311 @@
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-      <span class="log"><a href="index.html" class="logo d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center">
         <h1>MT Travels and Tours<span>.</span></h1>
-      </a></span>
-
+      </a>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="service.html"   >Services</a></li>
+          <li><a href="service.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-      </nav><!-- .navbar -->
-
+      </nav>
     </div>
-  </header><!-- End Header -->
+  </header>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="hero">
-
     <div class="info d-flex align-items-center">
       <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6 text-center">
-            <h2 data-aos="fade-down">WELCOME TO MT TRAVELS AND TOURS</h2>
-            <p data-aos="fade-up">We offer you one of the best and cheap air tickets plans and provide you comfort with suitable hotels at affordable prices</p>
-            <a data-aos="fade-up" data-aos-delay="200" href="#about" class="btn-get-started">Get Started</a>
+        <div class="hero-content">
+          <div class="hero-eyebrow">Douala, Cameroon · Premium Travel</div>
+          <h1 class="hero-title">
+            Your Journey,<br>
+            <em>Crafted with Care</em>
+          </h1>
+          <p class="hero-sub">The best air tickets, handpicked hotels and curated touristic packages — all at prices that let you travel more.</p>
+          <div class="hero-actions">
+            <a href="#about" class="btn-hero-primary">Explore Services</a>
+            <a href="contact.html" class="btn-hero-ghost">Contact Us</a>
           </div>
         </div>
       </div>
     </div>
 
     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-
-      <div class="carousel-item active" style="background-image: url(assets/img/hero-carousel/R\ \(1\).jpg)"></div>
-      <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/R\ \(2\).jpg)"></div>
-      <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/R\ \(5\).jfif)"></div>
-      <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/R\ \(4\).jpg)"></div>
-      <div class="carousel-item" style="background-image: url(assets/img/hero-carousel/dad.jpg)"></div>
-
+      <div class="carousel-item active" style="background-image: url('assets/img/hero-carousel/R (1).jpg')"></div>
+      <div class="carousel-item" style="background-image: url('assets/img/hero-carousel/R (2).jpg')"></div>
+      <div class="carousel-item" style="background-image: url('assets/img/hero-carousel/R (5).jfif')"></div>
+      <div class="carousel-item" style="background-image: url('assets/img/hero-carousel/R (4).jpg')"></div>
+      <div class="carousel-item" style="background-image: url('assets/img/hero-carousel/dad.jpg')"></div>
       <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       </a>
-
       <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
       </a>
-
     </div>
 
-  </section><!-- End Hero Section -->
+    <div class="hero-fade-bottom"></div>
+  </section>
 
-  <!-- ======= Advertizement Section ======= -->
+  <!-- ======= Service Strip ======= -->
+  <div class="service-strip">
+    <div class="service-strip-inner">
+      <a href="./forms/Air/index.html" class="strip-item">
+        <div class="strip-icon"><i class="bi bi-airplane"></i></div>
+        <div class="strip-text">
+          <strong>Air Reservation</strong>
+          <span>Book your flight</span>
+        </div>
+      </a>
+      <a href="./forms/Hotel/index.html" class="strip-item">
+        <div class="strip-icon"><i class="bi bi-building"></i></div>
+        <div class="strip-text">
+          <strong>Hotel Booking</strong>
+          <span>Find your stay</span>
+        </div>
+      </a>
+      <a href="./forms/Tourist/index.html" class="strip-item">
+        <div class="strip-icon"><i class="bi bi-map"></i></div>
+        <div class="strip-text">
+          <strong>Touristic Packages</strong>
+          <span>Curated experiences</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ======= Air Reservation Section ======= -->
   <section id="about" class="about">
-    <div class="container" data-aos="fade-up">
+    <div class="container-fluid px-0" data-aos="fade-up">
+      <div class="row g-0">
 
-      <div class="row position-relative">
-
-        <div class="col-lg-7 about-img" style="background-image: url(assets/img/atten.jpg);"></div>
-
-        <div class="col-lg-7">
-          <h2>Air Reservation</h2>
-          <div class="our-story">
-            <p>At MT Travels and Tours we are in partnership with quite a few airlines well known by everyone and we make sure our clients get to their destination, all at affordable prices.</p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Ethiopian Airline</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Turkish Airline</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Air Ivoir</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Air France</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Senegal Airlines</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>kenya Airways</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Camair-co</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Rwanda Airlines</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Egypt Air</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>SN Brussels</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Asky Airline</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Cronos Air</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Afrijet</span></li>
-            </ul>
-            <p>Our objective is to make our customers happy and ensure they are 100% satisfied with what they have paid for.</p>
-
-            <div class="watch-video d-flex align-items-center position-relative">
-              <img src="./assets/img/Airfrance.jfif" alt="" style="width: 50px;">
-              <img src="./assets/img/iv.jfif" alt="" style="width: 50px;">
-              <img src="./assets/img/sen.jfif" alt="" style="width: 50px;">
-              <img src="./assets/img/ken.jfif" alt="" style="width: 50px;">
-            </div>
-          </div>
+        <!-- Left: Photo — full stretch -->
+        <div class="col-lg-6 about-img" style="background-image: url(assets/img/atten.jpg);" data-aos="fade-right" data-aos-delay="100">
+          <div class="img-corner"></div>
         </div>
 
-      </div>
+        <!-- Right: Stacked panels filling the column -->
+        <div class="col-lg-6 d-flex flex-column" data-aos="fade-left" data-aos-delay="200">
 
+          <!-- ① Main info pane (cream bg) -->
+          <div class="air-main-pane flex-grow-1">
+            <h2>Air Reservation</h2>
+            <div class="our-story">
+              <p>In partnership with world-class airlines, we secure your seat to any destination — comfortably and at the best price.</p>
+              <ul>
+                <li><i class="bi bi-check-circle-fill"></i><span>Ethiopian Airline</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Turkish Airlines</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Air Ivoire</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Air France</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Senegal Airlines</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Kenya Airways</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Camair-co</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Rwanda Airlines</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Egypt Air</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>SN Brussels</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Asky Airline</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Cronos Air</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Afrijet</span></li>
+              </ul>
+              <p>100% satisfaction is our promise — every flight, every time.</p>
+              <div class="watch-video d-flex align-items-center position-relative">
+                <img src="./assets/img/Airfrance.jfif" alt="Air France" loading="lazy" decoding="async">
+                <img src="./assets/img/iv.jfif" alt="Air Ivoire" loading="lazy" decoding="async">
+                <img src="./assets/img/sen.jfif" alt="Senegal Airlines" loading="lazy" decoding="async">
+                <img src="./assets/img/ken.jfif" alt="Kenya Airways" loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+
+          <!-- ② Dark stats accent panel -->
+          <div class="air-accent-panel">
+            <div class="accent-stat">
+              <span class="num">13+</span>
+              <span class="lbl">Airline Partners</span>
+              <span class="desc">Africa &amp; Europe's top carriers</span>
+            </div>
+            <div class="accent-stat">
+              <span class="num">80+</span>
+              <span class="lbl">Destinations</span>
+              <span class="desc">Domestic &amp; international routes</span>
+            </div>
+            <div class="accent-stat">
+              <span class="num">24h</span>
+              <span class="lbl">Response Time</span>
+              <span class="desc">Fast confirmation, no delays</span>
+            </div>
+          </div>
+
+          <!-- ③ Gold promise strip + CTA -->
+          <div class="air-promise-strip">
+            <div class="promise-item">
+              <i class="bi bi-shield-check"></i>
+              Best Price Guarantee
+            </div>
+            <div class="promise-divider"></div>
+            <div class="promise-item">
+              <i class="bi bi-headset"></i>
+              Expert Support
+            </div>
+            <div class="promise-divider"></div>
+            <a href="./forms/Air/index.html" class="promise-item promise-cta">
+              Book Now &nbsp;<i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
     </div>
   </section>
-  <!-- End Advertizement Section -->
 
   <!-- ======= Stats Counter Section ======= -->
   <section id="stats-counter" class="stats-counter section-bg">
-    <div class="container">
-
+    <div class="container" data-aos="fade-up">
       <div class="row gy-4">
-
         <div class="col-lg-3 col-md-6">
           <div class="stats-item d-flex align-items-center w-100 h-100">
-            <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+            <i class="bi bi-emoji-smile flex-shrink-0"></i>
             <div>
               <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
               <p>Happy Clients</p>
             </div>
           </div>
-        </div><!-- End Stats Item -->
-
+        </div>
         <div class="col-lg-3 col-md-6">
           <div class="stats-item d-flex align-items-center w-100 h-100">
-            <i class="bi bi-headset color-green flex-shrink-0"></i>
+            <i class="bi bi-headset flex-shrink-0"></i>
             <div>
               <span data-purecounter-start="0" data-purecounter-end="288" data-purecounter-duration="1" class="purecounter"></span>
               <p>Hours Of Support</p>
             </div>
           </div>
-        </div><!-- End Stats Item -->
-
+        </div>
         <div class="col-lg-3 col-md-6">
           <div class="stats-item d-flex align-items-center w-100 h-100">
-            <i class="bi bi-people color-pink flex-shrink-0"></i>
+            <i class="bi bi-people flex-shrink-0"></i>
             <div>
               <span data-purecounter-start="0" data-purecounter-end="13" data-purecounter-duration="1" class="purecounter"></span>
               <p>Hard Workers</p>
             </div>
           </div>
-        </div><!-- End Stats Item -->
-
+        </div>
       </div>
-
     </div>
-  </section><!-- End Stats Counter Section -->
+  </section>
 
-  <!-- ======= Alt Services Section ======= -->
+  <!-- ======= Hotel Booking Section ======= -->
   <section id="alt-services" class="alt-services">
     <div class="container" data-aos="fade-up">
-
       <div class="row justify-content-around gy-4">
         <div class="col-lg-6 img-bg" style="background-image: url(assets/img/Hotel.jpg);" data-aos="zoom-in" data-aos-delay="100"></div>
-
-        <div class="col-lg-5 d-flex flex-column justify-content-center">
-          <h3>Hotel Booking And Reservation</h3>
-          <p>We also take care of our customers' comfort by providing them with the best hotels, all at cheaper prices.</p>
+        <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-left" data-aos-delay="150">
+          <h3>Hotel Booking &amp; Reservation</h3>
+          <p>We secure our customers' comfort by providing access to the finest hotels — all at prices that respect your budget.</p>
 
           <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="100">
             <i class="bi bi-easel flex-shrink-0"></i>
             <div>
               <h4><a href="" class="stretched-link">Entertainment</a></h4>
-              <p>TV to pass time with family and entertain children; and if single, pass time with friends.</p>
+              <p>TV and leisure amenities to relax with family, friends, or solo after a long day of travel.</p>
             </div>
-          </div><!-- End Icon Box -->
+          </div>
 
           <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="200">
             <i class="bi bi-patch-check flex-shrink-0"></i>
             <div>
               <h4><a href="" class="stretched-link">Hotel Services</a></h4>
-              <p>Always available for the customers' needs and make sure they are safe and secure during their stay.</p>
+              <p>Round-the-clock hospitality ensuring every guest feels safe, secure, and fully taken care of.</p>
             </div>
-          </div><!-- End Icon Box -->
+          </div>
 
           <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
             <i class="bi bi-brightness-high flex-shrink-0"></i>
             <div>
-              <h4><a href="" class="stretched-link">Availability</a></h4>
-              <p>Always available even during bad weather conditions; we always respond to our customers.</p>
+              <h4><a href="" class="stretched-link">Always Available</a></h4>
+              <p>Whatever the conditions, our team is always on standby — ready to respond to every need.</p>
             </div>
-          </div><!-- End Icon Box -->
-
+          </div>
         </div>
       </div>
-
     </div>
-  </section><!-- End Alt Services Section -->
+  </section>
 
-  <!-- ======= Project Details Section ======= -->
+  <!-- ======= Touristic Packages Section ======= -->
   <section id="project-details" class="project-details">
     <div class="container" data-aos="fade-up">
       <div class="section-header">
-        <h2>TOURISTIC PACKAGES</h2>
-        <p>Wanna relax with family or friends? Here at MT Travels and Tours, we offer you touristic packages and short trips, all at affordable prices.</p>
+        <h2>Touristic Packages</h2>
+        <p>Dreaming of a getaway with family or friends? We offer curated short trips and full packages — all at prices that say yes.</p>
       </div>
       <div class="position-relative h-100">
         <div class="slides-1 portfolio-details-slider swiper">
           <div class="swiper-wrapper align-items-center">
-
             <div class="swiper-slide">
-              <img src="assets/img/projects/design-1.jpg" alt="">
+              <img src="assets/img/projects/design-1.jpg" alt="Destination 1" loading="lazy" decoding="async">
             </div>
-
             <div class="swiper-slide">
-              <img src="assets/img/projects/t-2.jpg" alt="">
+              <img src="assets/img/projects/t-2.jpg" alt="Destination 2" loading="lazy" decoding="async">
             </div>
-
             <div class="swiper-slide">
-              <img src="assets/img/projects/t-1.jpg" alt="">
+              <img src="assets/img/projects/t-1.jpg" alt="Destination 3" loading="lazy" decoding="async">
             </div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
-
+      </div>
+      <div class="packages-cta" data-aos="fade-up" data-aos-delay="200">
+        <a href="./forms/Tourist/index.html" class="btn-packages">
+          Book a Package &nbsp;<i class="bi bi-arrow-right"></i>
+        </a>
       </div>
     </div>
-  </section><!-- End Project Details Section -->
+  </section>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>MT Travels and Tours</h3>
             <p>
-              AKWA <br>
-              Douala, AKWA<br>
-              Cameroon <br><br>
-              <strong>Phone:</strong> 677875361<br>
-              <strong>Email:</strong> michealtufoin@yahoo.com<br>
+              AKWA<br>Douala, AKWA<br>Cameroon<br><br>
+              <strong>Phone:</strong> 677 875 361<br>
+              <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="422f2b212a27232e3637242d2b2c023b232a2d2d6c212d2f">[email&#160;protected]</a>
             </p>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Air/index.html">Air Reservation</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Hotel/index.html">Hotel Booking</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Tourist/index.html">Touristic Packages</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Tourist/index.html">Training  Ticket Reservation</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Air/index.html">Air Reservation</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Hotel/index.html">Hotel Booking</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Tourist/index.html">Touristic Packages</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Tourist/index.html">Training Ticket Reservation</a></li>
             </ul>
           </div>
-
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Client's Community</h4>
-            <p>Be one of our permanent clients and join our group to see the latest flights at cheap prices.</p>
+            <p>Be one of our permanent clients and get the latest flights at the best prices.</p>
             <form action="https://chat.whatsapp.com/Bn6myYJ2ijM76p38basp0O" method="">
-              <input type="email" name="email">
+              <input type="email" name="email" placeholder="Your email address">
               <a href="https://chat.whatsapp.com/Bn6myYJ2ijM76p38basp0O"><input type="submit" value="Join Now"></a>
             </form>
           </div>
-
         </div>
       </div>
     </div>
-
     <div class="container d-md-flex py-4">
-
       <div class="me-md-auto text-center text-md-start">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Zamiel</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          Designed by <a href="https://bootstrapmade.com/">ZamielMorningstar</a>
-        </div>
+        <div class="copyright">&copy; Copyright <strong><span>Zamiel</span></strong>. All Rights Reserved</div>
+        <div class="credits">Designed by <a href="#">ZamielMorningstar</a></div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -316,26 +1368,32 @@
         <a href="https://cm.linkedin.com/company/psvvoyages#main-content" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
   <main id="main">
-
     <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
     <div id="preloader"></div>
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- Vendor JS — deferred so they never block page paint -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/vendor/aos/aos.js" defer></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+    <script src="assets/vendor/php-email-form/validate.js" defer></script>
+    <script src="assets/js/main.js" defer></script>
 
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <!-- Header scroll behaviour -->
+    <script>
+      (function () {
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+          header.classList.toggle('scrolled', window.scrollY > 60);
+        });
+      })();
+    </script>
+  </main>
 
 </body>
-
 </html>

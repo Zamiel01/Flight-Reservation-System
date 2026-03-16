@@ -4,19 +4,17 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>MT Travels and Tours</title>
+  <title>MT Travels and Tours — About</title>
   <meta content="" name="description">
-  <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/psv.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet"></noscript>
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -28,20 +26,772 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- Original CSS (kept for base) -->
   <link href="assets/css/main.css" rel="stylesheet">
-
   <link href="assets/css/cake.css" rel="stylesheet">
 
+  <!-- ✦ PERFORMANCE: preload above-fold hero image ✦ -->
+  <link rel="preload" as="image" href="assets/img/ab.jpg" fetchpriority="high">
+  <style>
+    /* Prevent layout shift while images load */
+    .breadcrumbs { background-color: #0d1b2a; }
+    .team-card .card-img { background-color: #162336; }
+  </style>
 
-  <!-- =======================================================
-  * Template Name: UpConstruction
-  * Updated: Jul 27 2023 with Bootstrap v5.3.1
-  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- ✦ ABOUT PAGE OVERRIDE STYLES ✦ -->
+  <style>
+    /* ─── Design Tokens ─────────────────────────────── */
+    :root {
+      --navy:       #0d1b2a;
+      --navy-mid:   #162336;
+      --navy-light: #1e3050;
+      --gold:       #c9a84c;
+      --gold-light: #e8c97a;
+      --gold-pale:  #f5e9c8;
+      --cream:      #faf7f0;
+      --white:      #ffffff;
+      --text-dark:  #0d1b2a;
+      --text-mid:   #3a4a5c;
+      --text-muted: #7a8b9c;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-italic:  'Cormorant Garamond', serif;
+      --font-body:    'DM Sans', sans-serif;
+      --radius:     4px;
+      --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
 
+    /* ─── Global Reset for this page ────────────────── */
+    body {
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ─── HEADER ─────────────────────────────────────── */
+    .header {
+      background: transparent;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+      padding: 20px 0;
+      position: fixed;
+      transition: background var(--transition);
+    }
+    .header.scrolled {
+      background: rgba(13, 27, 42, 0.96);
+    }
+    .header .logo h1 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: #fff;
+    }
+    .header .logo h1 span { color: var(--gold); }
+
+    @media (min-width: 1280px) {
+      .navbar a, .navbar a:focus {
+        font-family: var(--font-body);
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.75);
+        font-weight: 500;
+      }
+      .navbar a:hover, .navbar .active { color: var(--gold); }
+      .navbar>ul>li>a:before { background: var(--gold); }
+    }
+
+    /* ─── HERO / BREADCRUMB ──────────────────────────── */
+    .breadcrumbs {
+      padding: 0;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background-size: cover;
+      background-position: center 40%;
+      overflow: hidden;
+    }
+    .breadcrumbs::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        160deg,
+        rgba(13,27,42,0.88) 0%,
+        rgba(13,27,42,0.55) 60%,
+        rgba(201,168,76,0.18) 100%
+      );
+    }
+    .breadcrumbs::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(to top, var(--cream), transparent);
+    }
+    .breadcrumbs .container {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding-top: 120px;
+    }
+    .breadcrumbs .eyebrow {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      padding: 6px 16px;
+      border: 1px solid rgba(201,168,76,0.4);
+      border-radius: 50px;
+    }
+    .breadcrumbs h2 {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 8vw, 96px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 10px;
+    }
+    .breadcrumbs h2 em {
+      font-style: italic;
+      color: var(--gold-light);
+      font-weight: 400;
+    }
+    .breadcrumbs ol {
+      justify-content: center;
+      font-family: var(--font-body);
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.5);
+      margin-top: 16px;
+    }
+    .breadcrumbs ol a { color: rgba(255,255,255,0.65); }
+    .breadcrumbs ol li+li::before { color: var(--gold); content: '◆'; font-size: 8px; padding: 0 10px; }
+
+    /* ─── ABOUT US SECTION ───────────────────────────── */
+    #about-us {
+      padding: 0 0 80px;
+      background: var(--cream);
+      position: relative;
+    }
+    .about-us-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 30px 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .about-us-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .about-left { position: relative; }
+    .about-label {
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .about-label::before {
+      content: '';
+      width: 40px; height: 1px;
+      background: var(--gold);
+    }
+    .about-left h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+    .about-left h3 {
+      font-family: var(--font-italic);
+      font-size: 20px;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-mid);
+      line-height: 1.5;
+      border-left: 3px solid var(--gold);
+      padding-left: 20px;
+      margin: 24px 0 0;
+    }
+    .about-right p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+    }
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .about-feature-card {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 22px;
+      background: var(--white);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: var(--radius);
+      transition: var(--transition);
+      box-shadow: 0 2px 20px rgba(13,27,42,0.04);
+    }
+    .about-feature-card:hover {
+      border-color: var(--gold);
+      transform: translateX(6px);
+      box-shadow: 0 8px 32px rgba(13,27,42,0.1);
+    }
+    .feature-icon {
+      width: 48px; height: 48px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 20px; color: var(--gold);
+    }
+    .about-feature-card span {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--navy);
+      letter-spacing: 0.01em;
+    }
+    .about-tagline {
+      font-family: var(--font-italic);
+      font-size: 17px;
+      font-style: italic;
+      color: var(--text-muted);
+      padding-top: 12px;
+      border-top: 1px solid rgba(201,168,76,0.2);
+    }
+
+    /* ─── STATS BAR ──────────────────────────────────── */
+    .stats-bar {
+      background: var(--navy);
+      padding: 48px 0;
+      margin: 0;
+    }
+    .stats-bar .container {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+    }
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0; top: 20%; bottom: 20%;
+      width: 1px;
+      background: rgba(201,168,76,0.2);
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+    .stat-label {
+      font-family: var(--font-body);
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-top: 8px;
+      display: block;
+    }
+    @media (max-width: 600px) {
+      .stats-bar .container { flex-wrap: wrap; }
+      .stat-item { width: 50%; min-width: 120px; margin-bottom: 24px; }
+      .stat-item::after { display: none; }
+    }
+
+    /* ─── TEAM SECTION ───────────────────────────────── */
+    #team {
+      padding: 100px 0;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    #team::before {
+      content: 'TEAM';
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: 280px;
+      font-weight: 900;
+      color: rgba(13,27,42,0.025);
+      top: -40px; right: -40px;
+      letter-spacing: -0.05em;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .team-header {
+      text-align: center;
+      padding-bottom: 70px;
+      position: relative;
+    }
+    .team-header .eyebrow {
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 16px;
+    }
+    .team-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .team-header h2::after { display: none; }
+    .team-header p {
+      font-family: var(--font-italic);
+      font-size: 18px;
+      font-style: italic;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .team-divider {
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 20px auto 0;
+    }
+
+    /* Team grid */
+    .team .row { row-gap: 40px !important; }
+    .team .member { padding-bottom: 0; }
+    .team-card {
+      background: var(--cream);
+      border: 1px solid rgba(201,168,76,0.12);
+      overflow: hidden;
+      position: relative;
+      transition: var(--transition);
+      border-radius: var(--radius);
+      box-shadow: 0 4px 24px rgba(13,27,42,0.06);
+    }
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 64px rgba(13,27,42,0.14);
+      border-color: var(--gold);
+    }
+    .team-card .card-img {
+      position: relative;
+      overflow: hidden;
+      height: 280px;
+      background: var(--navy);
+    }
+    .team-card .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.6s ease;
+      filter: grayscale(20%);
+    }
+    .team-card:hover .card-img img {
+      transform: scale(1.06);
+      filter: grayscale(0%);
+    }
+    .team-card .card-img .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(13,27,42,0.85) 0%, transparent 50%);
+      z-index: 1;
+    }
+    .team-card .social-row {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 2;
+      display: flex;
+      gap: 0;
+      transform: translateY(100%);
+      transition: transform var(--transition);
+    }
+    .team-card:hover .social-row { transform: translateY(0); }
+    .social-row a {
+      flex: 1;
+      padding: 14px;
+      background: var(--gold);
+      color: var(--navy) !important;
+      text-align: center;
+      font-size: 16px;
+      transition: background 0.2s;
+      display: block;
+    }
+    .social-row a:hover { background: var(--gold-light); }
+    .social-row a + a { background: var(--navy-light); color: var(--gold) !important; }
+    .social-row a + a:hover { background: var(--navy-mid); }
+    .team-card .card-body {
+      padding: 22px 24px 24px;
+    }
+    .team-card .card-body h4 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+    .team-card .card-body .role {
+      font-family: var(--font-body);
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* Override old team styles */
+    .team .member .member-img { display: none; }
+    .team .member .member-info { display: none; }
+    .team .member { position: static; }
+
+    /* ─── GALLERY SLIDER ─────────────────────────────── */
+    .gallery-section {
+      background: var(--navy);
+      padding: 80px 0;
+      overflow: hidden;
+    }
+    .gallery-section .section-label {
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .gallery-section .section-title {
+      text-align: center;
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 40px;
+    }
+    /* Slider overrides */
+    .gallery-section .container { background: transparent; }
+    .gallery-section .slider {
+      border-radius: 8px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    }
+    .gallery-section .nav-button {
+      background: rgba(201,168,76,0.2);
+      border: 1px solid rgba(201,168,76,0.3);
+      backdrop-filter: blur(8px);
+    }
+    .gallery-section .nav-button:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .gallery-section .line { background: rgba(255,255,255,0.3); }
+    .gallery-section .line.active { background: var(--gold); }
+
+    /* ─── TESTIMONIALS ───────────────────────────────── */
+    #testimonials {
+      padding: 100px 0;
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+    #testimonials::before {
+      content: '"';
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: 600px;
+      color: rgba(201,168,76,0.06);
+      top: -100px; left: -60px;
+      line-height: 1;
+      pointer-events: none;
+    }
+    #testimonials .section-header { padding-bottom: 60px; }
+    #testimonials .section-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 48px);
+      color: var(--navy);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    #testimonials .section-header h2::before,
+    #testimonials .section-header h2::after { background: var(--gold); }
+    #testimonials .section-header p {
+      font-family: var(--font-italic);
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 17px;
+    }
+
+    .testimonial-item {
+      background: var(--white) !important;
+      border: 1px solid rgba(201,168,76,0.15) !important;
+      border-radius: var(--radius) !important;
+      box-shadow: 0 4px 32px rgba(13,27,42,0.06) !important;
+      padding: 36px 36px 36px 70px !important;
+      position: relative;
+      transition: var(--transition);
+    }
+    .testimonial-item:hover {
+      border-color: var(--gold) !important;
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(13,27,42,0.1) !important;
+    }
+    .testimonial-item::before {
+      content: '"';
+      position: absolute;
+      top: 20px; left: 24px;
+      font-family: var(--font-display);
+      font-size: 72px;
+      color: var(--gold);
+      line-height: 1;
+      opacity: 0.4;
+    }
+    .testimonial-item .testimonial-img {
+      border-radius: var(--radius) !important;
+      border: 3px solid var(--gold) !important;
+      width: 72px !important;
+    }
+    .testimonial-item h3 {
+      font-family: var(--font-display) !important;
+      font-size: 17px !important;
+      color: var(--navy) !important;
+      font-weight: 700 !important;
+    }
+    .testimonial-item h4 {
+      font-family: var(--font-body) !important;
+      font-size: 11px !important;
+      letter-spacing: 0.2em !important;
+      text-transform: uppercase !important;
+      color: var(--gold) !important;
+    }
+    .testimonial-item .stars i { color: var(--gold) !important; }
+    .testimonial-item p {
+      font-family: var(--font-italic) !important;
+      font-size: 16px !important;
+      font-style: italic !important;
+      color: var(--text-mid) !important;
+      line-height: 1.7 !important;
+    }
+    .testimonial-item .quote-icon-left,
+    .testimonial-item .quote-icon-right { display: none !important; }
+    .testimonials .swiper-pagination-bullet { background: var(--navy) !important; }
+    .testimonials .swiper-pagination-bullet-active { background: var(--gold) !important; }
+
+    /* ─── FOOTER ─────────────────────────────────────── */
+    #footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.75);
+      box-shadow: none;
+    }
+    #footer .footer-top {
+      background: var(--navy-mid);
+      border-top: 1px solid rgba(201,168,76,0.15);
+      padding: 60px 0 40px;
+    }
+    #footer .footer-top .footer-contact h4,
+    #footer .footer-top h4 {
+      font-family: var(--font-display);
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 600;
+    }
+    #footer .footer-top .footer-contact p {
+      color: rgba(255,255,255,0.55);
+    }
+    #footer .footer-top .footer-links ul a {
+      color: rgba(255,255,255,0.55);
+    }
+    #footer .footer-top .footer-links ul a:hover {
+      color: var(--gold);
+    }
+    #footer .footer-top .footer-links ul i { color: var(--gold); }
+    #footer .footer-newsletter form {
+      border-color: rgba(201,168,76,0.3);
+      background: rgba(255,255,255,0.05);
+    }
+    #footer .footer-newsletter form input[type=email] {
+      background: transparent;
+      color: #fff;
+    }
+    #footer .footer-newsletter form input[type=submit] {
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 600;
+    }
+    #footer .footer-newsletter form input[type=submit]:hover {
+      background: var(--gold-light);
+    }
+    #footer .social-links a {
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.2);
+    }
+    #footer .social-links a:hover { background: var(--gold); color: var(--navy); }
+    #footer .copyright, #footer .credits { color: rgba(255,255,255,0.4); }
+    #footer .credits a { color: var(--gold); }
+    .py-4 { background: var(--navy); border-top: 1px solid rgba(201,168,76,0.1); }
+
+    /* ─── SCROLL TOP ─────────────────────────────────── */
+    .scroll-top { background: var(--gold) !important; }
+    .scroll-top i { color: var(--navy) !important; }
+
+    /* ─── ANIMATIONS ─────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity:0; transform: translateY(32px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    .breadcrumbs .container > * {
+      animation: fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) both;
+    }
+    .breadcrumbs .eyebrow     { animation-delay: 0.1s; }
+    .breadcrumbs h2           { animation-delay: 0.25s; }
+    .breadcrumbs ol           { animation-delay: 0.4s; }
+
+    /* ─── PRELOADER ─────────────────────────────────── */
+    #preloader:before { border-color: var(--gold) transparent var(--gold) transparent; }
+
+    /* ═══════════════════════════════════════
+       ✅ ROBUST MOBILE NAV FIX — ALWAYS ON TOP
+       (replaces previous incomplete fixes)
+    ═══════════════════════════════════════ */
+    @media (max-width: 1279px) {
+      /* Force header to stay above background but below menu */
+      #header.header {
+        z-index: 9999 !important;
+      }
+
+      /* Toggle icons: always clickable, above header */
+      .mobile-nav-toggle {
+        z-index: 10001 !important;
+        position: relative !important;
+        color: #fff;
+      }
+
+      /* The mobile menu container (navbar) */
+      #navbar.navbar {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        z-index: 10000 !important; /* below toggle icons but above everything else */
+        pointer-events: none; /* allow clicks to pass through when hidden */
+      }
+
+      /* Mobile menu active state — activate via body class (common pattern) */
+      body.mobile-nav-active #navbar.navbar {
+        pointer-events: auto !important;
+      }
+
+      /* The UL is the actual menu panel */
+      #navbar.navbar ul {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100vh !important;
+        background: rgba(13,27,42,0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        margin: 0 !important;
+        padding: 80px 0 30px 0 !important; /* space for header */
+        list-style: none !important;
+        overflow-y: auto !important;
+        z-index: 10000 !important;
+        display: none; /* hidden by default */
+        flex-direction: column !important;
+        border: none !important;
+      }
+
+      /* Show UL when mobile menu active */
+      body.mobile-nav-active #navbar.navbar ul {
+        display: flex !important;
+      }
+
+      /* Dark overlay behind the menu (pseudo-element on navbar) */
+      #navbar.navbar::before {
+        content: '' !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0,0,0,0.65) !important;
+        z-index: 9999 !important; /* behind the menu UL (z-index 10000) */
+        backdrop-filter: blur(4px) !important;
+        display: none; /* hidden by default */
+      }
+
+      body.mobile-nav-active #navbar.navbar::before {
+        display: block !important;
+      }
+
+      /* Style the nav links for mobile */
+      #navbar.navbar ul li {
+        width: 100% !important;
+        border-bottom: 1px solid rgba(201,168,76,0.1) !important;
+      }
+
+      #navbar.navbar ul li a {
+        display: block !important;
+        padding: 18px 30px !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.12em !important;
+        text-transform: uppercase !important;
+        color: rgba(255,255,255,0.9) !important;
+        text-decoration: none !important;
+        transition: all 0.3s !important;
+      }
+
+      #navbar.navbar ul li a:hover,
+      #navbar.navbar ul li a.active {
+        color: var(--gold, #c9a84c) !important;
+        background: rgba(201,168,76,0.1) !important;
+        padding-left: 40px !important;
+      }
+
+      /* Ensure any page content does not overlap */
+      #hero.hero, .services-hero, .breadcrumbs, #main, main,
+      section, footer, .service-strip, .about, .stats-counter,
+      .alt-services, .project-details {
+        z-index: 1 !important;
+        position: relative !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -49,221 +799,278 @@
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
       <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>MT Travels and Tours<span>.</span></h1>
       </a>
-
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html" class="active">About</a></li>
-          <li><a href="service.html"  >Services</a></li>
+          <li><a href="service.html">Services</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-      </nav><!-- .navbar -->
+      </nav>
     </div>
-  </header><!-- End Header -->
+  </header>
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
+    <!-- ======= Hero Breadcrumb ======= -->
     <div class="breadcrumbs d-flex align-items-center" style="background-image: url('assets/img/ab.jpg');">
-      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
-
-        <h2>About</h2>
+      <div class="container position-relative d-flex flex-column align-items-center">
+        <span class="eyebrow">Est. Douala, Cameroon</span>
+        <h2>Our <em>Story</em></h2>
         <ol>
           <li><a href="index.html">Home</a></li>
           <li>About</li>
         </ol>
-
       </div>
-    </div><!-- End Breadcrumbs -->
+    </div>
+
+    <!-- ======= Stats Bar ======= -->
+    <div class="stats-bar">
+      <div class="container">
+        <div class="stat-item">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">5K+</span>
+          <span class="stat-label">Happy Travelers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">80+</span>
+          <span class="stat-label">Destinations</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">8</span>
+          <span class="stat-label">Expert Agents</span>
+        </div>
+      </div>
+    </div>
 
     <!-- ======= About Us Section ======= -->
     <section id="about-us" class="about-us">
-      <div class="container" data-aos="fade-up">
+      <div class="about-us-inner">
 
-        <div class="row content">
-          <div class="col-lg-6" data-aos="fade-right">
-            <h2>MT Travels and Tours.</h2>
-            <h3> Specialized in the sales of air ticket, hotel booking and we provide touristic packages</h3>
+        <!-- Left: Identity -->
+        <div class="about-left" data-aos="fade-right">
+          <div class="about-label">Who we are</div>
+          <h2>MT Travels<br>&amp; Tours</h2>
+          <h3>Specialized in the sales of air tickets, hotel booking and curated touristic packages across the globe.</h3>
+        </div>
+
+        <!-- Right: Details -->
+        <div class="about-right" data-aos="fade-left">
+          <p>Our company brings together a blend of professionals in civil aviation with many years of experience. Prompt reaction to your request is an integral part of who we are — we treat every journey as a personal invitation to excellence.</p>
+
+          <div class="about-features">
+            <div class="about-feature-card">
+              <div class="feature-icon"><i class="bi bi-airplane"></i></div>
+              <span>Flight Reservation</span>
+            </div>
+            <div class="about-feature-card">
+              <div class="feature-icon"><i class="bi bi-building"></i></div>
+              <span>Hotel Booking</span>
+            </div>
+            <div class="about-feature-card">
+              <div class="feature-icon"><i class="bi bi-map"></i></div>
+              <span>Touristic Packages</span>
+            </div>
           </div>
-          <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
-            <p>
-              Our company has a blend of professionals in civil aviation with many years of experience.Prompt reaction to your request is an integral part of us..
-            </p>
-            <ul>
-              <li><i class="ri-check-double-line"></i> Flight Reservation</li>
-              <li><i class="ri-check-double-line"></i> Hotel Booking</li>
-              <li><i class="ri-check-double-line"></i> Touristic Packages</li>
-            </ul>
-            <p class="fst-italic">
-              Make us your number one choice, and we will make sure you won't regret choosing us.
-            </p>
-          </div>
+
+          <p class="about-tagline">Make us your number one choice — we will make sure you never regret it.</p>
         </div>
 
       </div>
-    </section><!-- End About Us Section -->
+    </section>
 
     <!-- ======= Our Team Section ======= -->
     <section id="team" class="team">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-header">
-          <h2>Our Team</h2>
-          <p>Members of MT Travels and Tours, we are happy to provide our assistance.</p>
+        <div class="team-header">
+          <span class="eyebrow">The People Behind the Magic</span>
+          <h2>Meet Our Team</h2>
+          <p>Dedicated professionals ready to craft your perfect journey.</p>
+          <div class="team-divider"></div>
         </div>
 
-        <div class="row gy-5">
+        <div class="row gy-4 justify-content-center">
 
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
-            <div class="member-img">
-              <img src="assets/img/bo.png" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="tel:+237677875361"><i class="bi bi-telephone"></i></a>
+          <!-- CEO -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="team-card">
+              <div class="card-img">
+                <img loading="lazy" decoding="async" src="assets/img/bo.png" alt="Tufoin Micheal">
+                <div class="overlay"></div>
+                <div class="social-row">
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="tel:+237677875361"><i class="bi bi-telephone"></i></a>
+                </div>
+              </div>
+              <div class="card-body">
+                <h4>Tufoin Micheal</h4>
+                <span class="role">Chief Executive Officer</span>
               </div>
             </div>
-            <div class="member-info text-center">
-              <h4>Tufoin Micheal</h4>
-              <span>CEO</span>
-            </div>
-          </div><!-- End Team Member -->
+          </div>
 
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
-            <div class="member-img">
-              <img src="assets/img/sydo.png" class="img-fluid" alt="">
-              <div class="social">
-                <a href="tel:+237679056167"><i class="bi bi-telephone"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
+          <!-- Sales Rep 1 -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+            <div class="team-card">
+              <div class="card-img">
+                <img loading="lazy" decoding="async" src="assets/img/sydo.png" alt="Meshi Sydoline">
+                <div class="overlay"></div>
+                <div class="social-row">
+                  <a href="tel:+237679056167"><i class="bi bi-telephone"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+              <div class="card-body">
+                <h4>Meshi Sydoline</h4>
+                <span class="role">Sales Representative</span>
               </div>
             </div>
-            <div class="member-info text-center">
-              <h4>Meshi Sydoline</h4>
-              <span>Sales Representative</span>
-            </div>
-          </div><!-- End Team Member -->
+          </div>
 
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="300">
-            <div class="member-img">
-              <img src="assets/img/nan.png" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-facebook"></i></a>
-                <a href="tel:+237651798513"><i class="bi bi-telephone"></i></a>
+          <!-- Sales Rep 2 -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-card">
+              <div class="card-img">
+                <img loading="lazy" decoding="async" src="assets/img/nan.png" alt="Nancy Atah">
+                <div class="overlay"></div>
+                <div class="social-row">
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="tel:+237651798513"><i class="bi bi-telephone"></i></a>
+                </div>
+              </div>
+              <div class="card-body">
+                <h4>Nancy Atah</h4>
+                <span class="role">Sales Representative</span>
               </div>
             </div>
-            <div class="member-info text-center">
-              <h4>Nancy Atah</h4>
-              <span>Sales Representative</span>
-            </div>
-          </div><!-- End Team Member -->
+          </div>
 
-          
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-            <div class="member-img">
-              <img src="assets/img/chr.png" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-telephone"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
+          <!-- Agency Manager -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="team-card">
+              <div class="card-img">
+                <img loading="lazy" decoding="async" src="assets/img/chr.png" alt="Ntone Christophe">
+                <div class="overlay"></div>
+                <div class="social-row">
+                  <a href="#"><i class="bi bi-telephone"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+              <div class="card-body">
+                <h4>Ntone Christophe</h4>
+                <span class="role">Agency Manager</span>
               </div>
             </div>
-            <div class="member-info text-center">
-              <h4>Ntone Christophe</h4>
-              <span>Agency Manager</span>
-            </div>
+          </div>
 
-          </div><!-- End Team Member -->
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-            <div class="member-img">
-              <img src="assets/img/bro.png" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-telephone"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
+          <!-- Commercial Agent 1 -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-card">
+              <div class="card-img">
+                <img loading="lazy" decoding="async" src="assets/img/bro.png" alt="William Boumgue">
+                <div class="overlay"></div>
+                <div class="social-row">
+                  <a href="#"><i class="bi bi-telephone"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+              <div class="card-body">
+                <h4>William Boumgue</h4>
+                <span class="role">Agent Commercial</span>
               </div>
             </div>
-            <div class="member-info text-center">
-              <h4>William Boumgue</h4>
-              <span>Agent Commercial</span>
-            </div>
-          </div><!-- End Team Member -->
+          </div>
 
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-            <div class="member-img">
-              <img src="assets/img/sis.png" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-telephone"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
+          <!-- Counter Agent -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
+            <div class="team-card">
+              <div class="card-img">
+                <img loading="lazy" decoding="async" src="assets/img/sis.png" alt="Mme Pezo Kenita">
+                <div class="overlay"></div>
+                <div class="social-row">
+                  <a href="#"><i class="bi bi-telephone"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+              <div class="card-body">
+                <h4>Mme Pezo Kenita</h4>
+                <span class="role">Counter Agent</span>
               </div>
             </div>
-            <div class="member-info text-center">
-              <h4>Mme Pezo Kenita</h4>
-              <span>Counter Agent</span>
-            </div>
-          </div><!-- End Team Member -->
+          </div>
 
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-            <div class="member-img">
-              <img src="assets/img/new.png" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-telephone"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
+          <!-- Sales Rep 3 -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-card">
+              <div class="card-img">
+                <img loading="lazy" decoding="async" src="assets/img/new.png" alt="Mme Asanghuo Liliane">
+                <div class="overlay"></div>
+                <div class="social-row">
+                  <a href="#"><i class="bi bi-telephone"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+              <div class="card-body">
+                <h4>Mme Asanghuo Liliane</h4>
+                <span class="role">Sales Representative</span>
               </div>
             </div>
-            <div class="member-info text-center">
-              <h4>Mme Asanghuo Liliane</h4>
-              <span>Sales Representative</span>
-            </div>
-          </div><!-- End Team Member -->
+          </div>
 
-
-          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="500">
-            <div class="member-img">
-              <img src="assets/img/mec.png" class="img-fluid" alt="">
-              <div class="social">
-                <a href="#"><i class="bi bi-telephone"></i></a>
-                <a href="#"><i class="bi bi-facebook"></i></a>
+          <!-- Commercial Agent 2 -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="450">
+            <div class="team-card">
+              <div class="card-img">
+                <img loading="lazy" decoding="async" src="assets/img/mec.png" alt="Kossi Alain">
+                <div class="overlay"></div>
+                <div class="social-row">
+                  <a href="#"><i class="bi bi-telephone"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+              <div class="card-body">
+                <h4>Kossi Alain</h4>
+                <span class="role">Agent Commercial</span>
               </div>
             </div>
-            <div class="member-info text-center">
-              <h4>Kossi Alain</h4>
-              <span>Agent Commercial</span>
-            </div>
-          </div><!-- End Team Member -->
+          </div>
 
         </div>
-        
-  
       </div>
-      
-    </section><!-- End Our Team Section -->
-    <div class="container">
+    </section>
 
-      <div class="slider">
-          <img class="active" src="assets/img/team.jpeg" alt="Image" />
-          <img src="assets/img/Group.jpeg" alt="Image" />
-          <img src="assets/img/fam.jpeg" alt="Image" />
+    <!-- ======= Gallery Slider ======= -->
+    <div class="gallery-section">
+      <p class="section-label">Our Moments</p>
+      <h2 class="section-title">Life at MT Travels</h2>
+      <div class="container" style="max-width:960px;">
+        <div class="slider">
+          <img loading="lazy" decoding="async" class="active" src="assets/img/team.jpeg" alt="Our Team">
+          <img loading="lazy" decoding="async" src="assets/img/Group.jpeg" alt="Group Photo">
+          <img loading="lazy" decoding="async" src="assets/img/fam.jpeg" alt="Family Moments">
+        </div>
+        <div class="navigation-button" id="navButtons"></div>
+        <button id="prevButton" class="nav-button prev">&#10094;</button>
+        <button id="nextButton" class="nav-button next">&#10095;</button>
       </div>
+    </div>
 
-      <div class="navigation-button" id="navButtons"></div>
-
-      <button id="prevButton" class="nav-button prev">&#10094;</button>
-      <button id="nextButton" class="nav-button next">&#10095;</button>
-
-  </div>
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg">
+    <!-- ======= Testimonials ======= -->
+    <section id="testimonials" class="testimonials">
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
           <h2>Testimonials</h2>
-          <p>Testimonials from our previous customers</p>
+          <p>Words from travelers who trusted their journeys to us</p>
         </div>
 
         <div class="slides-2 swiper">
@@ -272,161 +1079,137 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                  <img loading="lazy" decoding="async" src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
                   <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
+                  <h4>CEO &amp; Founder</h4>
                   <div class="stars">
                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                   </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    I had a great time on my trips, and all thanks to MT Travels and Tours. I advise you all to choose them; they are the best.
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
+                  <p>I had a great time on my trips, and all thanks to MT Travels and Tours. I advise you all to choose them; they are the best.</p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <img loading="lazy" decoding="async" src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
                   <h3>Sara Wilsson</h3>
                   <h4>Designer</h4>
                   <div class="stars">
                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                   </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    With MT Travels and Tours, I had the most wonderful view ever during my trip for touristic sights.
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
+                  <p>With MT Travels and Tours, I had the most wonderful view ever during my trip for touristic sights.</p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                  <img loading="lazy" decoding="async" src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
                   <h3>Jena Karlis</h3>
                   <h4>Store Owner</h4>
                   <div class="stars">
                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                   </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    I can't even imagine how incredible their flight prices are—so cheap and affordable!
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
+                  <p>I can't even imagine how incredible their flight prices are — so affordable and always on time!</p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
+                  <img loading="lazy" decoding="async" src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
                   <h3>Matt Brandon</h3>
                   <h4>Freelancer</h4>
                   <div class="stars">
                     <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                   </div>
-                  <p>
-                    <i class="bi bi-quote quote-icon-left"></i>
-                    They are really like family; I am never disappointed once I work with them.
-                    <i class="bi bi-quote quote-icon-right"></i>
-                  </p>
+                  <p>They are really like family; I am never disappointed once I work with them.</p>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
+            </div>
 
           </div>
           <div class="swiper-pagination"></div>
         </div>
-
       </div>
-    </section><!-- End Testimonials Section -->
+    </section>
 
-  </main><!-- End #main -->
+  </main>
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
     <div class="footer-top">
       <div class="container">
         <div class="row">
-
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>MT Travels and Tours</h3>
             <p>
-              AKWA <br>
-              Douala, AKWA<br>
-              Cameroon <br><br>
-              <strong>Phone:</strong> 677875361<br>
-              <strong>Email:</strong> michealtufoin@yahoo.com<br>
+              AKWA<br>Douala, AKWA<br>Cameroon<br><br>
+              <strong>Phone:</strong> 677 875 361<br>
+              <strong>Email:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d6bbbfb5beb3b7baa2a3b0b9bfb896afb7beb9b9f8b5b9bb">[email&#160;protected]</a>
             </p>
           </div>
-
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Air/index.html">Air Reservation</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Hotel/index.html">Hotel Booking</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Tourist/index.html">Touristic Packages</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="./forms/Tourist/index.html">Training  Ticket Reservation</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Air/index.html">Air Reservation</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Hotel/index.html">Hotel Booking</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Tourist/index.html">Touristic Packages</a></li>
+              <li><i class="bx bx-chevron-right"></i><a href="./forms/Tourist/index.html">Training Ticket Reservation</a></li>
             </ul>
           </div>
-
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Client's Community</h4>
-            <p>Be one of our permanent clients and join our group to see the latest flights at cheap prices.</p>
+            <p>Be one of our permanent clients and join our group to see the latest flights at the best prices.</p>
             <form action="https://chat.whatsapp.com/Bn6myYJ2ijM76p38basp0O" method="">
-              <input type="email" name="email"><input type="submit" value="Join Now">
+              <input type="email" name="email" placeholder="Your email address">
+              <input type="submit" value="Join Now">
             </form>
           </div>
-
         </div>
       </div>
     </div>
-
     <div class="container d-md-flex py-4">
       <div class="me-md-auto text-center text-md-start">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Zamiel</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          Designed by <a href="https://bootstrapmade.com/">ZamielMorningstar</a>
-        </div>
+        <div class="copyright">&copy; Copyright <strong><span>Zamiel</span></strong>. All Rights Reserved</div>
+        <div class="credits">Designed by <a href="#">ZamielMorningstar</a></div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
         <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
         <a href="https://www.facebook.com/PSVvoyage1" class="facebook"><i class="bx bxl-facebook"></i></a>
         <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
         <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
   <div id="preloader"></div>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- Vendor JS -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/php-email-form/validate.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/cake.js" defer></script>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/cake.js"></script>
-
+  <!-- Header scroll effect -->
+  <script>
+        (function () {
+      const header = document.getElementById('header');
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 50);
+      });
+    })();
+  </script>
 
 </body>
-
 </html>
